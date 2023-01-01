@@ -7330,7 +7330,7 @@ DIN A3, landscape with extra doc field</description>
 <attributes>
 <attribute name="AUTHOR" value="Tiago Silva"/>
 <attribute name="SOURCE" value="github.com/TiagoPaulaSilva/CS-GO-s-C4"/>
-<attribute name="VERSION" value="1.4"/>
+<attribute name="VERSION" value="1.5"/>
 </attributes>
 <variantdefs>
 </variantdefs>
@@ -7394,16 +7394,12 @@ DIN A3, landscape with extra doc field</description>
 <part name="Q3" library="My-Transistors" library_urn="urn:adsk.eagle:library:35671946" deviceset="N-FET-ENHANCEMENT-" device="SQ2310" package3d_urn="urn:adsk.eagle:package:35671962/1" value="N-FET-ENHANCEMENT-SQ2310">
 <attribute name="PARTNO" value="*"/>
 </part>
-<part name="LS1" library="My-Buzzers" library_urn="urn:adsk.eagle:library:35671831" deviceset="ACTIVE" device="-12MM" package3d_urn="urn:adsk.eagle:package:35671842/1" value="3V">
-<attribute name="FAMILY" value="3V"/>
-</part>
-<part name="Q5" library="My-Transistors" library_urn="urn:adsk.eagle:library:35671946" deviceset="N-FET-ENHANCEMENT-" device="SQ2310" package3d_urn="urn:adsk.eagle:package:35671962/1" value="N-FET-ENHANCEMENT-SQ2310">
-<attribute name="PARTNO" value="*"/>
+<part name="LS1" library="My-Buzzers" library_urn="urn:adsk.eagle:library:35671831" deviceset="ACTIVE" device="-12MM" package3d_urn="urn:adsk.eagle:package:35671842/1" value="Piezo">
+<attribute name="FAMILY" value="Piezo "/>
 </part>
 <part name="R3" library="My-RLC" library_urn="urn:adsk.eagle:library:35509816" deviceset="R_" device="0603" package3d_urn="urn:adsk.eagle:package:35509946/1" value="100R (5%)"/>
 <part name="R4" library="My-RLC" library_urn="urn:adsk.eagle:library:35509816" deviceset="R_" device="0603" package3d_urn="urn:adsk.eagle:package:35509946/1" value="100R (5%)"/>
 <part name="SUPPLY31" library="My-Supply" library_urn="urn:adsk.eagle:library:35531236" deviceset="0V" device=""/>
-<part name="SUPPLY32" library="My-Supply" library_urn="urn:adsk.eagle:library:35531236" deviceset="0V" device=""/>
 <part name="FRAME1" library="My-Frames" library_urn="urn:adsk.eagle:library:35797712" deviceset="DINA3_L" device=""/>
 <part name="U1" library="My-LDOs" library_urn="urn:adsk.eagle:library:35671878" deviceset="1117-" device="3.3V" package3d_urn="urn:adsk.eagle:package:35854457/2">
 <attribute name="FAMILY" value="LT1117-5.0"/>
@@ -7420,11 +7416,8 @@ DIN A3, landscape with extra doc field</description>
 <part name="SUPPLY12" library="My-Supply" library_urn="urn:adsk.eagle:library:35531236" deviceset="0V" device=""/>
 <part name="SUPPLY14" library="My-Supply" library_urn="urn:adsk.eagle:library:35531236" deviceset="5V" device=""/>
 <part name="SUPPLY26" library="My-Supply" library_urn="urn:adsk.eagle:library:35531236" deviceset="VBAT" device=""/>
-<part name="SUPPLY27" library="My-Supply" library_urn="urn:adsk.eagle:library:35531236" deviceset="VBAT" device=""/>
 <part name="R5" library="My-RLC" library_urn="urn:adsk.eagle:library:35509816" deviceset="R_" device="0603" package3d_urn="urn:adsk.eagle:package:35509946/1" value="10k (5%)"/>
-<part name="R6" library="My-RLC" library_urn="urn:adsk.eagle:library:35509816" deviceset="R_" device="0603" package3d_urn="urn:adsk.eagle:package:35509946/1" value="10k (5%)"/>
 <part name="SUPPLY28" library="My-Supply" library_urn="urn:adsk.eagle:library:35531236" deviceset="0V" device=""/>
-<part name="SUPPLY30" library="My-Supply" library_urn="urn:adsk.eagle:library:35531236" deviceset="0V" device=""/>
 <part name="SW1" library="My-Switches" library_urn="urn:adsk.eagle:library:35509780" deviceset="SPST-LATCH" device="-PHMC4-02" package3d_urn="urn:adsk.eagle:package:36894207/3" value="">
 <attribute name="FAMILY" value=""/>
 </part>
@@ -7444,6 +7437,7 @@ DIN A3, landscape with extra doc field</description>
 <part name="SUPPLY23" library="My-Supply" library_urn="urn:adsk.eagle:library:35531236" deviceset="5V" device=""/>
 <part name="SUPPLY24" library="My-Supply" library_urn="urn:adsk.eagle:library:35531236" deviceset="5V" device=""/>
 <part name="R7" library="My-RLC" library_urn="urn:adsk.eagle:library:35509816" deviceset="R_" device="0603" package3d_urn="urn:adsk.eagle:package:35509946/1" value="100R (5%)"/>
+<part name="SUPPLY25" library="My-Supply" library_urn="urn:adsk.eagle:library:35531236" deviceset="0V" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -7608,25 +7602,19 @@ checks Firmware\\CUSTOM\\README.txt</text>
 <attribute name="NAME" x="86.995" y="55.753" size="1.778" layer="95"/>
 <attribute name="FAMILY" x="86.995" y="53.213" size="1.778" layer="96"/>
 </instance>
-<instance part="LS1" gate="G$1" x="153.67" y="71.12" smashed="yes" grouprefs="BUZZER">
-<attribute name="NAME" x="149.606" y="71.12" size="1.778" layer="95" rot="R90" align="center"/>
-<attribute name="FAMILY" x="156.9085" y="71.0565" size="1.27" layer="96" rot="R90" align="center"/>
-</instance>
-<instance part="Q5" gate="G$1" x="152.4" y="55.245" smashed="yes" grouprefs="BUZZER">
-<attribute name="PARTNO" x="152.4" y="55.245" size="1.778" layer="96" display="off"/>
-<attribute name="NAME" x="154.94" y="55.753" size="1.778" layer="95"/>
-<attribute name="FAMILY" x="154.94" y="53.213" size="1.778" layer="96"/>
+<instance part="LS1" gate="G$1" x="150.495" y="79.375" smashed="yes" grouprefs="BUZZER">
+<attribute name="NAME" x="146.431" y="79.375" size="1.778" layer="95" rot="R90" align="center"/>
+<attribute name="FAMILY" x="153.7335" y="79.3115" size="1.27" layer="96" rot="R90" align="center"/>
 </instance>
 <instance part="R3" gate="G$1" x="72.39" y="52.705" smashed="yes" grouprefs="RED_LED">
 <attribute name="NAME" x="72.39" y="54.8386" size="1.27" layer="95" align="center"/>
 <attribute name="VALUE" x="72.39" y="50.8" size="1.27" layer="96" align="center"/>
 </instance>
-<instance part="R4" gate="G$1" x="140.335" y="52.705" smashed="yes" grouprefs="BUZZER">
-<attribute name="NAME" x="140.335" y="54.8386" size="1.27" layer="95" align="center"/>
-<attribute name="VALUE" x="140.335" y="50.8" size="1.27" layer="96" align="center"/>
+<instance part="R4" gate="G$1" x="137.16" y="88.9" smashed="yes" grouprefs="BUZZER">
+<attribute name="NAME" x="137.16" y="91.0336" size="1.27" layer="95" align="center"/>
+<attribute name="VALUE" x="137.16" y="86.995" size="1.27" layer="96" align="center"/>
 </instance>
 <instance part="SUPPLY31" gate="G$1" x="84.455" y="34.29" smashed="yes" grouprefs="RED_LED"/>
-<instance part="SUPPLY32" gate="G$1" x="152.4" y="34.29" smashed="yes" grouprefs="BUZZER"/>
 <instance part="FRAME1" gate="G$1" x="0" y="0" smashed="yes"/>
 <instance part="FRAME1" gate="G$2" x="287.02" y="0" smashed="yes">
 <attribute name="LAST_DATE_TIME" x="299.72" y="1.27" size="2.54" layer="94"/>
@@ -7662,19 +7650,11 @@ checks Firmware\\CUSTOM\\README.txt</text>
 <instance part="SUPPLY26" gate="G$1" x="64.135" y="228.6" smashed="yes" grouprefs="POWER_SUPPLY">
 <attribute name="VALUE" x="64.1604" y="232.41" size="1.778" layer="96" align="center"/>
 </instance>
-<instance part="SUPPLY27" gate="G$1" x="152.4" y="86.995" smashed="yes" grouprefs="BUZZER">
-<attribute name="VALUE" x="152.4254" y="90.805" size="1.778" layer="96" align="center"/>
-</instance>
 <instance part="R5" gate="G$1" x="64.135" y="44.45" smashed="yes" rot="R90" grouprefs="RED_LED">
 <attribute name="NAME" x="62.0014" y="44.45" size="1.27" layer="95" rot="R90" align="center"/>
 <attribute name="VALUE" x="66.04" y="44.45" size="1.27" layer="96" rot="R90" align="center"/>
 </instance>
-<instance part="R6" gate="G$1" x="132.08" y="44.45" smashed="yes" rot="R90" grouprefs="BUZZER">
-<attribute name="NAME" x="129.9464" y="44.45" size="1.27" layer="95" rot="R90" align="center"/>
-<attribute name="VALUE" x="133.985" y="44.45" size="1.27" layer="96" rot="R90" align="center"/>
-</instance>
 <instance part="SUPPLY28" gate="G$1" x="64.135" y="34.29" smashed="yes" grouprefs="RED_LED"/>
-<instance part="SUPPLY30" gate="G$1" x="132.08" y="34.29" smashed="yes" grouprefs="BUZZER"/>
 <instance part="SW1" gate="G$1" x="76.835" y="221.615" smashed="yes" rot="R270" grouprefs="POWER_SUPPLY">
 <attribute name="NAME" x="75.565" y="227.6475" size="1.778" layer="95" align="center"/>
 <attribute name="FAMILY" x="75.565" y="219.9005" size="1.016" layer="96" align="center"/>
@@ -7729,6 +7709,7 @@ checks Firmware\\CUSTOM\\README.txt</text>
 <attribute name="NAME" x="82.3214" y="76.835" size="1.27" layer="95" rot="R90" align="center"/>
 <attribute name="VALUE" x="86.36" y="76.835" size="1.27" layer="96" rot="R90" align="center"/>
 </instance>
+<instance part="SUPPLY25" gate="G$1" x="149.225" y="67.945" smashed="yes" grouprefs="BUZZER"/>
 </instances>
 <busses>
 </busses>
@@ -7792,11 +7773,6 @@ checks Firmware\\CUSTOM\\README.txt</text>
 <junction x="229.235" y="154.94" grouprefs="LCD_DISPLAY"/>
 </segment>
 <segment>
-<pinref part="Q5" gate="G$1" pin="S"/>
-<pinref part="SUPPLY32" gate="G$1" pin="0V"/>
-<wire x1="152.4" y1="36.83" x2="152.4" y2="50.165" width="0.1524" layer="91" grouprefs="BUZZER"/>
-</segment>
-<segment>
 <pinref part="Q3" gate="G$1" pin="S"/>
 <pinref part="SUPPLY31" gate="G$1" pin="0V"/>
 <wire x1="84.455" y1="36.83" x2="84.455" y2="50.165" width="0.1524" layer="91" grouprefs="RED_LED"/>
@@ -7825,9 +7801,9 @@ checks Firmware\\CUSTOM\\README.txt</text>
 <wire x1="64.135" y1="36.83" x2="64.135" y2="39.37" width="0.1524" layer="91" grouprefs="RED_LED"/>
 </segment>
 <segment>
-<pinref part="R6" gate="G$1" pin="1"/>
-<pinref part="SUPPLY30" gate="G$1" pin="0V"/>
-<wire x1="132.08" y1="36.83" x2="132.08" y2="39.37" width="0.1524" layer="91" grouprefs="BUZZER"/>
+<pinref part="LS1" gate="G$1" pin="-"/>
+<pinref part="SUPPLY25" gate="G$1" pin="0V"/>
+<wire x1="149.225" y1="70.485" x2="149.225" y2="73.025" width="0.1524" layer="91" grouprefs="BUZZER"/>
 </segment>
 </net>
 <net name="MCU_ICSP_MISO" class="0">
@@ -7980,9 +7956,9 @@ checks Firmware\\CUSTOM\\README.txt</text>
 </net>
 <net name="KEYPAD_ROW_4" class="0">
 <segment>
-<pinref part="U6" gate="G$1" pin="PD3"/>
-<wire x1="137.795" y1="129.54" x2="142.875" y2="129.54" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
 <label x="142.875" y="129.54" size="1.27" layer="95" xref="yes" grouprefs="MICROCONTROLLER"/>
+<pinref part="U6" gate="G$1" pin="PD3"/>
+<wire x1="137.795" y1="129.54" x2="142.875" y2="129.54" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="KP1" gate="G$1" pin="R4"/>
@@ -8144,25 +8120,11 @@ checks Firmware\\CUSTOM\\README.txt</text>
 <wire x1="84.455" y1="60.325" x2="84.455" y2="62.23" width="0.1524" layer="91" grouprefs="RED_LED"/>
 </segment>
 </net>
-<net name="N$1" class="0">
-<segment>
-<pinref part="LS1" gate="G$1" pin="-"/>
-<pinref part="Q5" gate="G$1" pin="D"/>
-<wire x1="152.4" y1="60.325" x2="152.4" y2="64.77" width="0.1524" layer="91" grouprefs="BUZZER"/>
-</segment>
-</net>
 <net name="N$3" class="0">
 <segment>
 <pinref part="Q3" gate="G$1" pin="G"/>
 <pinref part="R3" gate="G$1" pin="2"/>
 <wire x1="77.47" y1="52.705" x2="79.375" y2="52.705" width="0.1524" layer="91" grouprefs="RED_LED"/>
-</segment>
-</net>
-<net name="N$6" class="0">
-<segment>
-<pinref part="Q5" gate="G$1" pin="G"/>
-<pinref part="R4" gate="G$1" pin="2"/>
-<wire x1="145.415" y1="52.705" x2="147.32" y2="52.705" width="0.1524" layer="91" grouprefs="BUZZER"/>
 </segment>
 </net>
 <net name="GPIO_LED" class="0">
@@ -8183,18 +8145,14 @@ checks Firmware\\CUSTOM\\README.txt</text>
 </net>
 <net name="GPIO_BUZZER" class="0">
 <segment>
-<pinref part="U6" gate="G$1" pin="PB1"/>
-<wire x1="137.795" y1="161.29" x2="142.24" y2="161.29" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
 <label x="142.24" y="161.29" size="1.27" layer="95" xref="yes" grouprefs="MICROCONTROLLER"/>
+<pinref part="U6" gate="G$1" pin="PB1"/>
+<wire x1="137.795" y1="161.29" x2="142.24" y2="161.29" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="R4" gate="G$1" pin="1"/>
-<wire x1="135.255" y1="52.705" x2="132.08" y2="52.705" width="0.1524" layer="91" grouprefs="BUZZER"/>
-<label x="128.905" y="52.705" size="1.27" layer="95" rot="R180" xref="yes" grouprefs="BUZZER"/>
-<pinref part="R6" gate="G$1" pin="2"/>
-<wire x1="132.08" y1="52.705" x2="128.905" y2="52.705" width="0.1524" layer="91" grouprefs="BUZZER"/>
-<wire x1="132.08" y1="49.53" x2="132.08" y2="52.705" width="0.1524" layer="91" grouprefs="BUZZER"/>
-<junction x="132.08" y="52.705" grouprefs="BUZZER"/>
+<label x="125.73" y="88.9" size="1.27" layer="95" rot="R180" xref="yes" grouprefs="BUZZER"/>
+<wire x1="132.08" y1="88.9" x2="125.73" y2="88.9" width="0.1524" layer="91" grouprefs="BUZZER"/>
 </segment>
 </net>
 <net name="ADC_C4_EXPLOSIVE_1" class="0">
@@ -8371,11 +8329,6 @@ checks Firmware\\CUSTOM\\README.txt</text>
 <wire x1="69.215" y1="221.615" x2="64.135" y2="221.615" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
 <pinref part="SW1" gate="G$1" pin="SW1"/>
 </segment>
-<segment>
-<pinref part="LS1" gate="G$1" pin="+"/>
-<wire x1="152.4" y1="77.47" x2="152.4" y2="84.455" width="0.1524" layer="91" grouprefs="BUZZER"/>
-<pinref part="SUPPLY27" gate="G$1" pin="P$1"/>
-</segment>
 </net>
 <net name="N$10" class="0">
 <segment>
@@ -8399,6 +8352,14 @@ checks Firmware\\CUSTOM\\README.txt</text>
 <pinref part="LED4" gate="G$1" pin="A"/>
 <wire x1="84.455" y1="71.755" x2="84.455" y2="69.85" width="0.1524" layer="91" grouprefs="RED_LED"/>
 <pinref part="R7" gate="G$1" pin="1"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<pinref part="R4" gate="G$1" pin="2"/>
+<pinref part="LS1" gate="G$1" pin="+"/>
+<wire x1="142.24" y1="88.9" x2="149.225" y2="88.9" width="0.1524" layer="91" grouprefs="BUZZER"/>
+<wire x1="149.225" y1="88.9" x2="149.225" y2="85.725" width="0.1524" layer="91" grouprefs="BUZZER"/>
 </segment>
 </net>
 </nets>
