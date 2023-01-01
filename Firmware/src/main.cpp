@@ -5,12 +5,28 @@
 #define LED_RED_PIN 8
 #define BUZZER 9
 
+#define C4_SHELL_1 A0
+#define C4_SHELL_2 A1
+#define C4_SHELL_3 A2
+
+#define C4_SHELL_1_CONNECTED 0.30F
+#define C4_SHELL_2_CONNECTED 0.57F
+#define C4_SHELL_3_CONNECTED 1.00F
+#define C4_SHELL_DISCONNECTED 0.10F
+
+#define ADC_RESOLUTION 10
+#define ADC_STEPS (1<<ADC_RESOLUTION)
+#define ADC_VOLTAGE_REFERENCE 5.00F
+
+#define SPEED_UP_START_TIME_SECS 30
+
 int8_t hours = 0;
 int8_t minutes = 0;
 int8_t seconds = 0;
 
 bool countdown_running = false;
 bool countdown_finished = false;
+bool c4_shell_trigger = false;
 
 ISR(TIMER1_COMPA_vect) {
 
@@ -42,6 +58,20 @@ ISR(TIMER1_COMPA_vect) {
 			ms_interval = 0;
 		}
 	}
+
+	if (
+		(
+			((analogRead(C4_SHELL_1) * (ADC_VOLTAGE_REFERENCE / (float)ADC_STEPS)) < C4_SHELL_DISCONNECTED) ||
+			((analogRead(C4_SHELL_2) * (ADC_VOLTAGE_REFERENCE / (float)ADC_STEPS)) < C4_SHELL_DISCONNECTED) ||
+			((analogRead(C4_SHELL_3) * (ADC_VOLTAGE_REFERENCE / (float)ADC_STEPS)) < C4_SHELL_DISCONNECTED)
+			) && !c4_shell_trigger
+		) {
+		hours = 0;
+		minutes = 0;
+		seconds = SPEED_UP_START_TIME_SECS;
+		c4_shell_trigger = true;
+	}
+
 }
 
 void Init_ISR_Timer(double target_ms) {
@@ -89,6 +119,25 @@ void reset_system() {
 }
 
 void setup() {
+
+	Serial.begin(115200);
+
+	pinMode(C4_SHELL_1, INPUT);
+	pinMode(C4_SHELL_2, INPUT);
+	pinMode(C4_SHELL_3, INPUT);
+
+	/* 	while (1) {
+			Serial.print("C4_1: ");
+			Serial.println(analogRead(C4_SHELL_1) * (ADC_VOLTAGE_REFERENCE / (float)ADC_STEPS));
+
+			Serial.print("C4_2: ");
+			Serial.println(analogRead(C4_SHELL_2) * (ADC_VOLTAGE_REFERENCE / (float)ADC_STEPS));
+
+			Serial.print("C4_3: ");
+			Serial.println(analogRead(C4_SHELL_3) * (ADC_VOLTAGE_REFERENCE / (float)ADC_STEPS));
+
+			delay(1000);
+		} */
 
 	pinMode(LED_RED_PIN, OUTPUT);
 	digitalWrite(LED_RED_PIN, HIGH);
@@ -269,10 +318,31 @@ void setup() {
 			tone(9, 0, 100);
 			LCD.clear();
 			step = 0;
+			c4_shell_trigger = false;
 		}
 	}
 }
+
 void loop() {
+
+	static bool shell_beep = false;
+
+	if (c4_shell_trigger && !shell_beep) {
+
+		shell_beep = true;
+
+		tone(9, 5000, 100);
+		delay(50);
+		tone(9, 0, 100);
+		delay(50);
+		tone(9, 5000, 100);
+		delay(50);
+		tone(9, 0, 100);
+		delay(50);
+		tone(9, 5000, 100);
+		delay(50);
+		tone(9, 0, 100);
+	}
 
 	LCD.setCursor(0, 0);
 	LCD.print("   COUNTDOWN:   ");
@@ -315,7 +385,7 @@ void loop() {
 
 
 
-	static const uint32_t SPEED_UP_START_TIME_SECS = 30;
+
 	static const uint32_t NORMAL_INTERVAL_MS = 1000;
 	static const uint32_t INITIAL_SPEED_INTERVAL_MS = NORMAL_INTERVAL_MS;
 	static const uint32_t FINAL_SPEED_INTERVAL_MS = 50;
@@ -332,7 +402,7 @@ void loop() {
 			seconds--;
 		}
 	}
-	else if ((seconds < SPEED_UP_START_TIME_SECS ) && seconds > 0) {
+	else if ((seconds < SPEED_UP_START_TIME_SECS) && seconds > 0) {
 
 		static uint32_t t0 = millis();
 
