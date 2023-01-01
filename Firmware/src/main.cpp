@@ -9,14 +9,7 @@
 #define C4_SHELL_2 A1
 #define C4_SHELL_3 A2
 
-#define C4_SHELL_1_CONNECTED 0.30F
-#define C4_SHELL_2_CONNECTED 0.57F
-#define C4_SHELL_3_CONNECTED 1.00F
-#define C4_SHELL_DISCONNECTED 0.10F
-
-#define ADC_RESOLUTION 10
-#define ADC_STEPS (1<<ADC_RESOLUTION)
-#define ADC_VOLTAGE_REFERENCE 5.00F
+#define C4_SHELL_DISCONNECTED_AD_VALUE_MAX 20
 
 #define SPEED_UP_START_TIME_SECS 30
 
@@ -26,7 +19,7 @@ int8_t seconds = 0;
 
 bool countdown_running = false;
 bool countdown_finished = false;
-bool c4_shell_trigger = false;
+bool c4_shell_disconnection_detected = false;
 
 ISR(TIMER1_COMPA_vect) {
 
@@ -61,15 +54,15 @@ ISR(TIMER1_COMPA_vect) {
 
 	if (
 		(
-			((analogRead(C4_SHELL_1) * (ADC_VOLTAGE_REFERENCE / (float)ADC_STEPS)) < C4_SHELL_DISCONNECTED) ||
-			((analogRead(C4_SHELL_2) * (ADC_VOLTAGE_REFERENCE / (float)ADC_STEPS)) < C4_SHELL_DISCONNECTED) ||
-			((analogRead(C4_SHELL_3) * (ADC_VOLTAGE_REFERENCE / (float)ADC_STEPS)) < C4_SHELL_DISCONNECTED)
-			) && !c4_shell_trigger
+			(analogRead(C4_SHELL_1) < C4_SHELL_DISCONNECTED_AD_VALUE_MAX) ||
+			(analogRead(C4_SHELL_2) < C4_SHELL_DISCONNECTED_AD_VALUE_MAX) ||
+			(analogRead(C4_SHELL_3) < C4_SHELL_DISCONNECTED_AD_VALUE_MAX)
+			) && !c4_shell_disconnection_detected
 		) {
 		hours = 0;
 		minutes = 0;
 		seconds = SPEED_UP_START_TIME_SECS;
-		c4_shell_trigger = true;
+		c4_shell_disconnection_detected = true;
 	}
 
 }
@@ -120,24 +113,9 @@ void reset_system() {
 
 void setup() {
 
-	Serial.begin(115200);
-
 	pinMode(C4_SHELL_1, INPUT);
 	pinMode(C4_SHELL_2, INPUT);
 	pinMode(C4_SHELL_3, INPUT);
-
-	/* 	while (1) {
-			Serial.print("C4_1: ");
-			Serial.println(analogRead(C4_SHELL_1) * (ADC_VOLTAGE_REFERENCE / (float)ADC_STEPS));
-
-			Serial.print("C4_2: ");
-			Serial.println(analogRead(C4_SHELL_2) * (ADC_VOLTAGE_REFERENCE / (float)ADC_STEPS));
-
-			Serial.print("C4_3: ");
-			Serial.println(analogRead(C4_SHELL_3) * (ADC_VOLTAGE_REFERENCE / (float)ADC_STEPS));
-
-			delay(1000);
-		} */
 
 	pinMode(LED_RED_PIN, OUTPUT);
 	digitalWrite(LED_RED_PIN, HIGH);
@@ -160,7 +138,6 @@ void setup() {
 	LCD.clear();
 	LCD.setCursor(0, 0);
 
-
 	LCD.setCursor(0, 0);
 	LCD.print("TIMER: HH:MM:SS");
 	LCD.setCursor(0, 1);
@@ -180,8 +157,7 @@ void setup() {
 	char number_arr[3];
 	uint8_t number = 0;
 
-
-	// HOUR ----------------------------------------------
+	// GET HOURS ----------------------------------------------
 	while (step == 5) {
 		char input = KEYPAD.getKey();
 		LCD.setCursor(5, 1);
@@ -206,7 +182,7 @@ void setup() {
 		}
 	}
 
-	// MINUTES ----------------------------------------------
+	// GET MINUTES ----------------------------------------------
 
 	while (step == 7) {
 		char input = KEYPAD.getKey();
@@ -245,7 +221,7 @@ void setup() {
 		reset_system();
 	}
 
-	// SECONDS ----------------------------------------------
+	// GET SECONDS ----------------------------------------------
 
 	while (step == 9) {
 		char input = KEYPAD.getKey();
@@ -318,18 +294,18 @@ void setup() {
 			tone(9, 0, 100);
 			LCD.clear();
 			step = 0;
-			c4_shell_trigger = false;
+			c4_shell_disconnection_detected = false;
 		}
 	}
 }
 
 void loop() {
 
-	static bool shell_beep = false;
+	static bool c4_shell_disconnection_beep = false;
 
-	if (c4_shell_trigger && !shell_beep) {
+	if (c4_shell_disconnection_detected && !c4_shell_disconnection_beep) {
 
-		shell_beep = true;
+		c4_shell_disconnection_beep = true;
 
 		tone(9, 5000, 100);
 		delay(50);
@@ -382,9 +358,6 @@ void loop() {
 		LCD.setCursor(11, 1);
 		LCD.print(seconds);
 	}
-
-
-
 
 	static const uint32_t NORMAL_INTERVAL_MS = 1000;
 	static const uint32_t INITIAL_SPEED_INTERVAL_MS = NORMAL_INTERVAL_MS;
