@@ -1,9 +1,10 @@
 #include <Arduino.h>
 #include <LiquidCrystal_I2C.h>
 #include <Keypad.h>
+#include <Ticker.h>
 
 #define LED_RED_PIN 8
-#define BUZZER 9
+#define BUZZER_PIN 9
 
 #define C4_SHELL_1 A0
 #define C4_SHELL_2 A1
@@ -21,9 +22,7 @@ bool countdown_running = false;
 bool countdown_finished = false;
 bool c4_shell_disconnection_detected = false;
 
-ISR(TIMER1_COMPA_vect) {
-
-	TCNT1 = 0;
+void IST_Timer() {
 
 	static uint8_t ms_interval = 0;
 	static bool state = true;
@@ -67,29 +66,6 @@ ISR(TIMER1_COMPA_vect) {
 
 }
 
-void Init_ISR_Timer(double target_ms) {
-
-	target_ms /= 1000.0;
-
-	cli();	// stop interrupts for till we make the settings
-
-	TCCR1A = 0;	// Reset entire TCCR1A to 0
-	TCCR1B = 0;	// Reset entire TCCR1B to 0
-
-	TCCR1B |= B00000100;	// Set CS12 to 1 so we get prescalar 256
-	TIMSK1 |= B00000010;	// Set OCIE1A to 1 so we enable compare match A
-
-	/*
-	System clock 16 Mhz and Prescalar 256
-	Timer 1 speed = 16Mhz/256 = 62.5 Khz
-	Pulse time = 1/62.5 Khz =  16us
-	OCR1A = TIMER_OVERFLOW_MS_TARGET / 16us
-	*/
-
-	OCR1A = target_ms / 0.000016;	// TIMER_OVERFLOW_MS_TARGET = 1ms
-	sei();	// Enable back the interrupts
-}
-
 #define KEYPAD_ROWS 4
 #define  KEYPAD_COLUMNS 3
 
@@ -104,8 +80,8 @@ byte rowPins[KEYPAD_ROWS] = { 0, 7, 2, 3 };
 byte colPins[KEYPAD_COLUMNS] = { 4, 5, 6 };
 
 Keypad KEYPAD = Keypad(makeKeymap(keys), rowPins, colPins, KEYPAD_ROWS, KEYPAD_COLUMNS);
-
 LiquidCrystal_I2C LCD(0x27, 16, 2);
+Ticker ticker(IST_Timer, 1, 0, MILLIS);
 
 void reset_system() {
 	asm volatile ("jmp 0");
@@ -118,22 +94,20 @@ void setup() {
 	pinMode(C4_SHELL_3, INPUT);
 
 	pinMode(LED_RED_PIN, OUTPUT);
-	digitalWrite(LED_RED_PIN, HIGH);
-
-	Init_ISR_Timer(1);
+	digitalWrite(LED_RED_PIN, LOW);
 
 	LCD.init();
 	LCD.backlight();
 
 	uint16_t beep = 70;
 	uint16_t freq = 5000;
-	tone(BUZZER, freq, beep);
+	tone(BUZZER_PIN, freq, beep);
 	delay(beep);
-	tone(BUZZER, 0, beep);
+	tone(BUZZER_PIN, 0, beep);
 	delay(beep);
-	tone(BUZZER, freq, beep);
+	tone(BUZZER_PIN, freq, beep);
 	delay(beep);
-	tone(BUZZER, 0, beep);
+	tone(BUZZER_PIN, 0, beep);
 
 	LCD.clear();
 	LCD.setCursor(0, 0);
@@ -157,149 +131,189 @@ void setup() {
 	char number_arr[3];
 	uint8_t number = 0;
 
-	// GET HOURS ----------------------------------------------
-	while (step == 5) {
-		char input = KEYPAD.getKey();
-		LCD.setCursor(5, 1);
-		LCD.blink();
-		if (input >= '0' && input <= '9') {
-			hour_ten = input - '0';
-			tone(9, 5000, 100);
-			LCD.print(input);
-			step++;
+	do {
+		switch (step) {
+			case 5: {
+					char input = KEYPAD.getKey();
+					LCD.setCursor(5, 1);
+					LCD.blink();
+					if (input >= '0' && input <= '9') {
+						hour_ten = input - '0';
+						tone(BUZZER_PIN, 5000, 100);
+						LCD.print(input);
+						step++;
+					}
+					break;
+				}
+
+			case 6: {
+					char input = KEYPAD.getKey();
+					LCD.setCursor(6, 1);
+					LCD.blink();
+					if (input >= '0' && input <= '9') {
+						hour_one = input - '0';
+						tone(BUZZER_PIN, 5000, 100);
+						LCD.print(input);
+						step++;
+					}
+					else if (input == '*') {
+						tone(BUZZER_PIN, 5000, 100);
+						LCD.setCursor(5, 1);
+						LCD.print(" ");
+						step--;
+					}
+					break;
+				}
+
+			case 7: {
+					char input = KEYPAD.getKey();
+					LCD.setCursor(8, 1);
+					LCD.blink();
+					if (input >= '0' && input <= '9') {
+						min_ten = input - '0';
+						tone(BUZZER_PIN, 5000, 100);
+						LCD.print(input);
+						step++;
+					}
+					else if (input == '*') {
+						tone(BUZZER_PIN, 5000, 100);
+						LCD.setCursor(6, 1);
+						LCD.print(" ");
+						step--;
+					}
+					break;
+				}
+			case 8: {
+					char input = KEYPAD.getKey();
+					LCD.setCursor(9, 1);
+					LCD.blink();
+					if (input >= '0' && input <= '9') {
+						min_one = input - '0';
+						tone(BUZZER_PIN, 5000, 100);
+						LCD.print(input);
+
+						sprintf(number_arr, "%u%u", min_ten, min_one);
+						number = atoi(number_arr);
+						if (number >= 60) {
+							LCD.blink();
+							LCD.clear();
+							LCD.setCursor(0, 0);
+							LCD.print(" INVALID NUMBER ");
+							LCD.setCursor(0, 1);
+							LCD.print(" RESETTING ... ");
+							delay(3000);
+							reset_system();
+						}
+						step++;
+					}
+					else if (input == '*') {
+						tone(BUZZER_PIN, 5000, 100);
+						LCD.setCursor(8, 1);
+						LCD.print(" ");
+						step--;
+					}
+					break;
+				}
+
+			case 9: {
+					char input = KEYPAD.getKey();
+					LCD.setCursor(11, 1);
+					LCD.blink();
+					if (input >= '0' && input <= '9') {
+						sec_ten = input - '0';
+						tone(BUZZER_PIN, 5000, 100);
+						LCD.print(input);
+						step = 10;
+					}
+					else if (input == '*') {
+						tone(BUZZER_PIN, 5000, 100);
+						LCD.setCursor(9, 1);
+						LCD.print(" ");
+						step--;
+					}
+					break;
+				}
+
+			case 10: {
+					char input = KEYPAD.getKey();
+					LCD.setCursor(12, 1);
+					LCD.blink();
+					if (input >= '0' && input <= '9') {
+						sec_one = input - '0';
+						tone(BUZZER_PIN, 5000, 100);
+						LCD.print(input);
+						sprintf(number_arr, "%u%u", sec_ten, sec_one);
+						number = atoi(number_arr);
+						if (number >= 60) {
+							LCD.blink();
+							LCD.clear();
+							LCD.setCursor(0, 0);
+							LCD.print(" INVALID NUMBER ");
+							LCD.setCursor(0, 1);
+							LCD.print(" RESETTING ... ");
+							delay(3000);
+							reset_system();
+						}
+						step = 11;
+					}
+					else if (input == '*') {
+						tone(BUZZER_PIN, 5000, 100);
+						LCD.setCursor(11, 1);
+						LCD.print(" ");
+						step--;
+					}
+					break;
+				}
+
+			case 11: {
+					hours = (hour_ten * 10) + hour_one;
+					minutes = (min_ten * 10) + min_one;
+					seconds = (sec_ten * 10) + sec_one;
+					delay(200);
+					LCD.noBlink();
+					LCD.clear();
+
+					LCD.setCursor(0, 0);
+					LCD.print("   PRESS # TO   ");
+					LCD.setCursor(0, 1);
+					LCD.print("   ACTIVATE!!");
+					delay(50);
+					step = 12;
+					digitalWrite(LED_RED_PIN, HIGH);
+					ticker.start();
+					countdown_running = true;
+					break;
+				}
+			case 12: {
+					char armkey = KEYPAD.getKey();
+
+					if (armkey == '#') {
+						tone(BUZZER_PIN, 5000, 100);
+						delay(50);
+						tone(BUZZER_PIN, 0, 100);
+						delay(50);
+						tone(BUZZER_PIN, 5000, 100);
+						delay(50);
+						tone(BUZZER_PIN, 0, 100);
+						delay(50);
+						tone(BUZZER_PIN, 5000, 100);
+						delay(50);
+						tone(BUZZER_PIN, 0, 100);
+						LCD.clear();
+						step = 0;
+						c4_shell_disconnection_detected = false;
+					}
+					break;
+				}
+			default:
+				break;
 		}
-	}
-
-	while (step == 6) {
-		char input = KEYPAD.getKey();
-		LCD.setCursor(6, 1);
-		LCD.blink();
-		if (input >= '0' && input <= '9') {
-			hour_one = input - '0';
-			tone(9, 5000, 100);
-			LCD.print(input);
-			step++;
-		}
-	}
-
-	// GET MINUTES ----------------------------------------------
-
-	while (step == 7) {
-		char input = KEYPAD.getKey();
-		LCD.setCursor(8, 1);
-		LCD.blink();
-		if (input >= '0' && input <= '9') {
-			min_ten = input - '0';
-			tone(9, 5000, 100);
-			LCD.print(input);
-			step++;
-		}
-	}
-
-	while (step == 8) {
-		char input = KEYPAD.getKey();
-		LCD.setCursor(9, 1);
-		LCD.blink();
-		if (input >= '0' && input <= '9') {
-			min_one = input - '0';
-			tone(9, 5000, 100);
-			LCD.print(input);
-			step++;
-		}
-	}
-
-	sprintf(number_arr, "%u%u", min_ten, min_one);
-	number = atoi(number_arr);
-	if (number >= 60) {
-		LCD.blink();
-		LCD.clear();
-		LCD.setCursor(0, 0);
-		LCD.print(" INVALID NUMBER ");
-		LCD.setCursor(0, 1);
-		LCD.print(" RESETTING ... ");
-		delay(3000);
-		reset_system();
-	}
-
-	// GET SECONDS ----------------------------------------------
-
-	while (step == 9) {
-		char input = KEYPAD.getKey();
-		LCD.setCursor(11, 1);
-		LCD.blink();
-		if (input >= '0' && input <= '9') {
-			sec_ten = input - '0';
-			tone(9, 5000, 100);
-			LCD.print(input);
-			step = 10;
-		}
-	}
-
-	while (step == 10) {
-		char input = KEYPAD.getKey();
-		LCD.setCursor(12, 1);
-		LCD.blink();
-		if (input >= '0' && input <= '9') {
-			sec_one = input - '0';
-			tone(9, 5000, 100);
-			LCD.print(input);
-			step = 11;
-		}
-	}
-
-	sprintf(number_arr, "%u%u", sec_ten, sec_one);
-	number = atoi(number_arr);
-	if (number >= 60) {
-		LCD.blink();
-		LCD.clear();
-		LCD.setCursor(0, 0);
-		LCD.print(" INVALID NUMBER ");
-		LCD.setCursor(0, 1);
-		LCD.print(" RESETTING ... ");
-		delay(3000);
-		reset_system();
-	}
-
-	if (step == 11) {
-		hours = (hour_ten * 10) + hour_one;
-		minutes = (min_ten * 10) + min_one;
-		seconds = (sec_ten * 10) + sec_one;
-		delay(200);
-		LCD.noBlink();
-		LCD.clear();
-
-		LCD.setCursor(0, 0);
-		LCD.print("   PRESS # TO   ");
-		LCD.setCursor(0, 1);
-		LCD.print("   ACTIVATE!!");
-		delay(50);
-		step = 12;
-		countdown_running = true;
-	}
-
-	while (step == 12) {
-		char armkey = KEYPAD.getKey();
-
-		if (armkey == '#') {
-			tone(9, 5000, 100);
-			delay(50);
-			tone(9, 0, 100);
-			delay(50);
-			tone(9, 5000, 100);
-			delay(50);
-			tone(9, 0, 100);
-			delay(50);
-			tone(9, 5000, 100);
-			delay(50);
-			tone(9, 0, 100);
-			LCD.clear();
-			step = 0;
-			c4_shell_disconnection_detected = false;
-		}
-	}
+	} while (step != 0);
 }
 
 void loop() {
+
+	ticker.update();
 
 	static bool c4_shell_disconnection_beep = false;
 
@@ -307,17 +321,17 @@ void loop() {
 
 		c4_shell_disconnection_beep = true;
 
-		tone(9, 5000, 100);
+		tone(BUZZER_PIN, 5000, 100);
 		delay(50);
-		tone(9, 0, 100);
+		tone(BUZZER_PIN, 0, 100);
 		delay(50);
-		tone(9, 5000, 100);
+		tone(BUZZER_PIN, 5000, 100);
 		delay(50);
-		tone(9, 0, 100);
+		tone(BUZZER_PIN, 0, 100);
 		delay(50);
-		tone(9, 5000, 100);
+		tone(BUZZER_PIN, 5000, 100);
 		delay(50);
-		tone(9, 0, 100);
+		tone(BUZZER_PIN, 0, 100);
 	}
 
 	LCD.setCursor(0, 0);
@@ -370,7 +384,7 @@ void loop() {
 		static uint32_t t0 = millis();
 
 		if ((millis() - t0) >= 1000) {
-			tone(9, 7000, 50);
+			tone(BUZZER_PIN, 7000, 50);
 			t0 = millis();
 			seconds--;
 		}
@@ -384,7 +398,7 @@ void loop() {
 			if (interval_ms > (FINAL_SPEED_INTERVAL_MS * 2))
 				interval_ms -= (INITIAL_SPEED_INTERVAL_MS / (SPEED_UP_START_TIME_SECS / 2));
 
-			tone(9, 7000, 50);
+			tone(BUZZER_PIN, 7000, 50);
 			t0 = millis();
 			seconds--;
 		}
@@ -395,7 +409,7 @@ void loop() {
 
 		if ((millis() - t0) >= interval_ms) {
 
-			tone(9, 7000, 50);
+			tone(BUZZER_PIN, 7000, 50);
 			t0 = millis();
 			seconds--;
 		}
@@ -412,23 +426,23 @@ void loop() {
 		countdown_finished = true;
 
 		while (1) {
-
-			tone(9, 7000, 100);
+			ticker.update();
+			tone(BUZZER_PIN, 7000, 100);
 			delay(100);
 
-			tone(9, 7000, 100);
+			tone(BUZZER_PIN, 7000, 100);
 			delay(100);
 
-			tone(9, 7000, 100);
+			tone(BUZZER_PIN, 7000, 100);
 			delay(100);
 
-			tone(9, 7000, 100);
+			tone(BUZZER_PIN, 7000, 100);
 			delay(100);
 
-			tone(9, 7000, 100);
+			tone(BUZZER_PIN, 7000, 100);
 			delay(100);
 
-			tone(9, 7000, 100);
+			tone(BUZZER_PIN, 7000, 100);
 			delay(100);
 		}
 	}
