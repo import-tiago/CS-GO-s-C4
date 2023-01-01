@@ -7514,7 +7514,7 @@ DIN A3, landscape with extra doc field</description>
 <attributes>
 <attribute name="AUTHOR" value="Tiago Silva"/>
 <attribute name="SOURCE" value="github.com/TiagoPaulaSilva/CS-GO-s-C4"/>
-<attribute name="VERSION" value="1.2"/>
+<attribute name="VERSION" value="1.3"/>
 </attributes>
 <variantdefs>
 </variantdefs>
@@ -7653,9 +7653,9 @@ DIN A3, landscape with extra doc field</description>
 <wire x1="342.265" y1="95.25" x2="332.105" y2="95.25" width="0.8128" layer="135" grouprefs="C4_SHELLS_DETECTION"/>
 <rectangle x1="308.61" y1="86.36" x2="342.9" y2="89.535" layer="135" grouprefs="C4_SHELLS_DETECTION"/>
 <rectangle x1="308.61" y1="54.61" x2="342.9" y2="57.785" layer="135" grouprefs="C4_SHELLS_DETECTION"/>
-<text x="290.195" y="78.105" size="1.27" layer="137" font="vector" ratio="10" align="center" grouprefs="C4_SHELLS_DETECTION">1.64V</text>
-<text x="297.18" y="75.565" size="1.27" layer="137" font="vector" ratio="10" align="center" grouprefs="C4_SHELLS_DETECTION">1.05V</text>
-<text x="304.165" y="73.025" size="1.27" layer="137" font="vector" ratio="10" align="center" grouprefs="C4_SHELLS_DETECTION">0.59V</text>
+<text x="290.195" y="78.105" size="1.27" layer="137" font="vector" ratio="10" align="center" grouprefs="C4_SHELLS_DETECTION">0.30V</text>
+<text x="297.18" y="75.565" size="1.27" layer="137" font="vector" ratio="10" align="center" grouprefs="C4_SHELLS_DETECTION">0.57V</text>
+<text x="304.165" y="73.025" size="1.27" layer="137" font="vector" ratio="10" align="center" grouprefs="C4_SHELLS_DETECTION">1.00V</text>
 <text x="294.64" y="100.965" size="1.778" layer="140" font="vector" ratio="15" rot="R180" align="center" grouprefs="C4_SHELLS_DETECTION">RED WIRE</text>
 <text x="294.64" y="106.68" size="1.778" layer="135" font="vector" ratio="15" rot="R180" align="center" grouprefs="C4_SHELLS_DETECTION">BLACK WIRE</text>
 <text x="294.64" y="113.03" size="1.778" layer="139" font="vector" ratio="15" rot="R180" align="center" grouprefs="C4_SHELLS_DETECTION">YELLOW WIRE</text>
