@@ -1,0 +1,24 @@
+{
+  "build": {
+    "core": "arduino",
+    "extra_flags": "-DARDUINO_AVR_UNO",
+    "f_cpu": "8000000L",
+    "mcu": "atmega328p",
+    "variant": "standard"
+  },
+  "frameworks": [
+    "arduino"
+  ],
+  "fuses": {
+	"efuse": "0xFD",
+	"hfuse": "0xDA",
+	"lfuse": "0xE2"
+	},
+  "name": "ATmega328P-PU_breadboard",
+  "upload": {
+    "maximum_ram_size": 2048,
+    "maximum_size": 32256    
+  },
+  "url": "https://www.arduino.cc/en/Main/ArduinoBoardUno",
+  "vendor": "Arduino"
+}
