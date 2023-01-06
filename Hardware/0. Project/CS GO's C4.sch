@@ -250,7 +250,7 @@
 </package3d>
 </packages3d>
 <symbols>
-<symbol name="ATMEGA328P-PU" urn="urn:adsk.eagle:symbol:38714069/1" library_version="16">
+<symbol name="ATMEGA328P-PU" urn="urn:adsk.eagle:symbol:38714069/1" locally_modified="yes" library_version="16" library_locally_modified="yes">
 <wire x1="-12.7" y1="30.48" x2="-12.7" y2="-26.67" width="0.254" layer="94"/>
 <wire x1="-12.7" y1="-26.67" x2="12.7" y2="-26.67" width="0.254" layer="94"/>
 <wire x1="12.7" y1="-26.67" x2="12.7" y2="30.48" width="0.254" layer="94"/>
@@ -266,7 +266,7 @@
 <pin name="PB4" x="-17.78" y="-16.51" length="middle"/>
 <pin name="PB5" x="-17.78" y="-19.05" length="middle"/>
 <pin name="PB6" x="-17.78" y="3.81" length="middle"/>
-<pin name="PB7" x="-17.78" y="-5.08" length="middle"/>
+<pin name="PB7" x="-17.78" y="-6.35" length="middle"/>
 <pin name="PC0" x="17.78" y="19.05" length="middle" rot="R180"/>
 <pin name="PC1" x="17.78" y="16.51" length="middle" rot="R180"/>
 <pin name="PC2" x="17.78" y="13.97" length="middle" rot="R180"/>
@@ -287,7 +287,7 @@
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="ATMEGA328P-PU" urn="urn:adsk.eagle:component:38714042/2" prefix="U" library_version="16">
+<deviceset name="ATMEGA328P-PU" urn="urn:adsk.eagle:component:38714042/2" prefix="U" library_version="16" library_locally_modified="yes">
 <description>AVR AVR® ATmega Microcontroller IC 8-Bit 20MHz 32KB (16K x 16) FLASH 28-PDIP  &lt;a href="https://pricing.snapeda.com/parts/ATMEGA328-PU/Microchip%20Technology/view-part?ref=eda"&gt;Check availability&lt;/a&gt;</description>
 <gates>
 <gate name="G$1" symbol="ATMEGA328P-PU" x="0" y="0"/>
@@ -2566,7 +2566,7 @@ chip tantalum</description>
 <wire x1="-1.524" y1="0" x2="1.524" y2="0" width="0.254" layer="94"/>
 <rectangle x1="-1.651" y1="-2.54" x2="1.651" y2="-1.651" layer="94"/>
 </symbol>
-<symbol name="TPOT" urn="urn:adsk.eagle:symbol:38713513/1" locally_modified="yes" library_version="21" library_locally_modified="yes">
+<symbol name="TPOT" urn="urn:adsk.eagle:symbol:38713513/2" library_version="22">
 <wire x1="-0.762" y1="2.54" x2="-0.762" y2="-2.54" width="0.254" layer="94"/>
 <wire x1="0.762" y1="-2.54" x2="0.762" y2="2.54" width="0.254" layer="94"/>
 <wire x1="2.54" y1="0" x2="1.651" y2="0" width="0.1524" layer="94"/>
@@ -3297,7 +3297,7 @@ chip tantalum</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="RV_" urn="urn:adsk.eagle:component:38713544/1" prefix="RV" uservalue="yes" library_version="21" library_locally_modified="yes">
+<deviceset name="RV_" urn="urn:adsk.eagle:component:38713544/2" prefix="RV" uservalue="yes" library_version="22">
 <description>&lt;b&gt;3386 Series&lt;/b&gt;&lt;p&gt;
 3/8" Square Trimmer</description>
 <gates>
@@ -7326,11 +7326,130 @@ DIN A3, landscape with extra doc field</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="My-Crystals" urn="urn:adsk.eagle:library:35670754">
+<packages>
+<package name="2MM_1.6MM" urn="urn:adsk.eagle:footprint:35670743/2" library_version="5">
+<description>2 mm x 1.6 mm</description>
+<smd name="1" x="-0.675" y="-0.5" dx="0.75" dy="0.7" layer="1"/>
+<smd name="2" x="0.675" y="-0.5" dx="0.75" dy="0.7" layer="1"/>
+<smd name="3" x="0.675" y="0.5" dx="0.75" dy="0.7" layer="1"/>
+<smd name="4" x="-0.675" y="0.5" dx="0.75" dy="0.7" layer="1"/>
+<text x="0" y="0" size="1.27" layer="25" align="center">&gt;NAME</text>
+<text x="0" y="0" size="1.27" layer="27" align="center">&gt;VALUE</text>
+<wire x1="-1" y1="0.8" x2="1" y2="0.8" width="0.1" layer="51"/>
+<wire x1="1" y1="0.8" x2="1" y2="-0.8" width="0.1" layer="51"/>
+<wire x1="1" y1="-0.8" x2="-1" y2="-0.8" width="0.1" layer="51"/>
+<wire x1="-1" y1="-0.8" x2="-1" y2="0.8" width="0.1" layer="51"/>
+<wire x1="-2.05" y1="1.85" x2="2.05" y2="1.85" width="0.1" layer="51"/>
+<wire x1="2.05" y1="1.85" x2="2.05" y2="-1.85" width="0.1" layer="51"/>
+<wire x1="2.05" y1="-1.85" x2="-2.05" y2="-1.85" width="0.1" layer="51"/>
+<wire x1="-2.05" y1="-1.85" x2="-2.05" y2="1.85" width="0.1" layer="51"/>
+<wire x1="-1.5" y1="-0.5" x2="-1.5" y2="-0.5" width="0.1" layer="21"/>
+<wire x1="-1.5" y1="-0.5" x2="-1.6" y2="-0.5" width="0.1" layer="21" curve="180"/>
+<wire x1="-1.6" y1="-0.5" x2="-1.6" y2="-0.5" width="0.1" layer="21"/>
+<wire x1="-1.6" y1="-0.5" x2="-1.5" y2="-0.5" width="0.1" layer="21" curve="180"/>
+</package>
+<package name="3.2MM_1.6MM" urn="urn:adsk.eagle:footprint:35843949/1" library_version="5">
+<description>Micro Crystal - 3.2 mm x 1.6 mm</description>
+<smd name="1" x="-1.25" y="0" dx="1.8" dy="1" layer="1" rot="R90"/>
+<smd name="2" x="1.25" y="0" dx="1.8" dy="1" layer="1" rot="R90"/>
+<text x="0" y="0" size="1.27" layer="25" align="center">&gt;NAME</text>
+<text x="0" y="0" size="1.27" layer="27" align="center">&gt;VALUE</text>
+<wire x1="-1.6" y1="0.75" x2="1.6" y2="0.75" width="0.2" layer="51"/>
+<wire x1="1.6" y1="0.75" x2="1.6" y2="-0.75" width="0.2" layer="51"/>
+<wire x1="1.6" y1="-0.75" x2="-1.6" y2="-0.75" width="0.2" layer="51"/>
+<wire x1="-1.6" y1="-0.75" x2="-1.6" y2="0.75" width="0.2" layer="51"/>
+<wire x1="-2.75" y1="1.9" x2="2.75" y2="1.9" width="0.1" layer="51"/>
+<wire x1="2.75" y1="1.9" x2="2.75" y2="-1.9" width="0.1" layer="51"/>
+<wire x1="2.75" y1="-1.9" x2="-2.75" y2="-1.9" width="0.1" layer="51"/>
+<wire x1="-2.75" y1="-1.9" x2="-2.75" y2="1.9" width="0.1" layer="51"/>
+<wire x1="-0.5" y1="0.75" x2="0.5" y2="0.75" width="0.1" layer="21"/>
+<wire x1="-0.5" y1="-0.75" x2="0.5" y2="-0.75" width="0.1" layer="21"/>
+</package>
+</packages>
+<packages3d>
+<package3d name="XRCGB25M000F3N00R0" urn="urn:adsk.eagle:package:35670742/3" type="model" library_version="5">
+<description>2 mm x 1.6 mm</description>
+<packageinstances>
+<packageinstance name="2MM_1.6MM"/>
+</packageinstances>
+</package3d>
+<package3d name="3.2MM_1.6MM" urn="urn:adsk.eagle:package:35843950/1" type="box" library_version="5">
+<description>Micro Crystal - 3.2 mm x 1.6 mm</description>
+<packageinstances>
+<packageinstance name="3.2MM_1.6MM"/>
+</packageinstances>
+</package3d>
+</packages3d>
+<symbols>
+<symbol name="CRYSTAL" urn="urn:adsk.eagle:symbol:35670755/1" library_version="5">
+<wire x1="1.016" y1="0" x2="2.54" y2="0" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-1.016" y2="0" width="0.1524" layer="94"/>
+<wire x1="-0.381" y1="1.524" x2="-0.381" y2="-1.524" width="0.254" layer="94"/>
+<wire x1="-0.381" y1="-1.524" x2="0.381" y2="-1.524" width="0.254" layer="94"/>
+<wire x1="0.381" y1="-1.524" x2="0.381" y2="1.524" width="0.254" layer="94"/>
+<wire x1="0.381" y1="1.524" x2="-0.381" y2="1.524" width="0.254" layer="94"/>
+<wire x1="1.016" y1="1.778" x2="1.016" y2="-1.778" width="0.254" layer="94"/>
+<wire x1="-1.016" y1="1.778" x2="-1.016" y2="-1.778" width="0.254" layer="94"/>
+<text x="13.081" y="12.827" size="0.8636" layer="93">1</text>
+<text x="16.764" y="12.827" size="0.8636" layer="93">2</text>
+<text x="0" y="3.175" size="1.778" layer="95" align="center">&gt;NAME</text>
+<text x="0" y="-2.8575" size="1.27" layer="96" align="center">&gt;VALUE</text>
+<pin name="2" x="2.54" y="0" visible="off" length="point" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="1" x="-2.54" y="0" visible="off" length="point" direction="pas" swaplevel="1"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="OSC-" urn="urn:adsk.eagle:component:35670756/4" prefix="Y" library_version="5">
+<description>&lt;b&gt;Crystals 25MHz Initial Freq Tol. = 30ppm&lt;/b&gt;&lt;p&gt;
+Source: &lt;a href="https://www.murata.com/products/productdata/8801076772894/SPEC-XRCGB25M000F3N00R0.pdf?1517925606000"&gt; Datasheet &lt;/a&gt;</description>
+<gates>
+<gate name="U1" symbol="CRYSTAL" x="0" y="0"/>
+</gates>
+<devices>
+<device name="25MHZ" package="2MM_1.6MM">
+<connects>
+<connect gate="U1" pin="1" pad="1"/>
+<connect gate="U1" pin="2" pad="3"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:35670742/3"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="DESCRIPTION" value="Crystals 25MHz Initial Freq Tol. = 30ppm" constant="no"/>
+<attribute name="HEIGHT" value="0.7mm" constant="no"/>
+<attribute name="MANUFACTURER_NAME" value="Murata Electronics" constant="no"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="XRCGB25M000F3N00R0" constant="no"/>
+<attribute name="MOUSER_PART_NUMBER" value="81-XRCGB25M000F3N0R0" constant="no"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Murata-Electronics/XRCGB25M000F3N00R0?qs=r3UZegS7eerrxzrBMfgw7w%3D%3D" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="32.768KHZ" package="3.2MM_1.6MM">
+<connects>
+<connect gate="U1" pin="1" pad="1"/>
+<connect gate="U1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:35843950/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="PN" value="CM7V-T1A-32.768k-9pF-20PPM-TA-QA T3" constant="no"/>
+<attribute name="VALUE" value="32.768 kHz" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 <attribute name="AUTHOR" value="Tiago Silva"/>
 <attribute name="SOURCE" value="github.com/TiagoPaulaSilva/CS-GO-s-C4"/>
-<attribute name="VERSION" value="1.5"/>
+<attribute name="VERSION" value="1.6"/>
 </attributes>
 <variantdefs>
 </variantdefs>
@@ -7437,7 +7556,10 @@ DIN A3, landscape with extra doc field</description>
 <part name="SUPPLY23" library="My-Supply" library_urn="urn:adsk.eagle:library:35531236" deviceset="5V" device=""/>
 <part name="SUPPLY24" library="My-Supply" library_urn="urn:adsk.eagle:library:35531236" deviceset="5V" device=""/>
 <part name="R7" library="My-RLC" library_urn="urn:adsk.eagle:library:35509816" deviceset="R_" device="0603" package3d_urn="urn:adsk.eagle:package:35509946/1" value="100R (5%)"/>
-<part name="SUPPLY25" library="My-Supply" library_urn="urn:adsk.eagle:library:35531236" deviceset="0V" device=""/>
+<part name="Y1" library="My-Crystals" library_urn="urn:adsk.eagle:library:35670754" deviceset="OSC-" device="25MHZ" package3d_urn="urn:adsk.eagle:package:35670742/3" value="16 MHz"/>
+<part name="C4" library="My-RLC" library_urn="urn:adsk.eagle:library:35509816" deviceset="C_" device="0603" package3d_urn="urn:adsk.eagle:package:35509984/1" value="22pF"/>
+<part name="C5" library="My-RLC" library_urn="urn:adsk.eagle:library:35509816" deviceset="C_" device="0603" package3d_urn="urn:adsk.eagle:package:35509984/1" value="22pF"/>
+<part name="SUPPLY27" library="My-Supply" library_urn="urn:adsk.eagle:library:35531236" deviceset="0V" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -7462,8 +7584,6 @@ DIN A3, landscape with extra doc field</description>
 <text x="314.325" y="65.0875" size="1.27" layer="135" rot="R270" align="center" grouprefs="C4_SHELLS_DETECTION">C4 SHELL</text>
 <text x="325.755" y="65.0875" size="1.27" layer="135" rot="R270" align="center" grouprefs="C4_SHELLS_DETECTION">C4 SHELL</text>
 <text x="337.185" y="65.0875" size="1.27" layer="135" rot="R270" align="center" grouprefs="C4_SHELLS_DETECTION">C4 SHELL</text>
-<text x="120.65" y="104.775" size="1.778" layer="140" align="center" grouprefs="MICROCONTROLLER">** needs custom bootloader **
-checks Firmware\\CUSTOM\\README.txt</text>
 </plain>
 <instances>
 <instance part="U6" gate="G$1" x="120.015" y="135.89" smashed="yes" grouprefs="MICROCONTROLLER">
@@ -7474,7 +7594,7 @@ checks Firmware\\CUSTOM\\README.txt</text>
 <attribute name="NAME" x="78.8035" y="152.9588" size="1.27" layer="95" rot="R90" align="center"/>
 <attribute name="VALUE" x="85.09" y="152.9334" size="1.27" layer="96" rot="R90" align="center"/>
 </instance>
-<instance part="SUPPLY5" gate="G$1" x="81.915" y="142.24" smashed="yes" grouprefs="MICROCONTROLLER"/>
+<instance part="SUPPLY5" gate="G$1" x="81.915" y="143.51" smashed="yes" grouprefs="MICROCONTROLLER"/>
 <instance part="CN2" gate="A" x="73.025" y="116.84" smashed="yes" rot="MR0" grouprefs="MICROCONTROLLER">
 <attribute name="NAME" x="65.405" y="124.7775" size="1.27" layer="95"/>
 <attribute name="VALUE" x="65.405" y="122.8725" size="1.27" layer="96"/>
@@ -7709,7 +7829,19 @@ checks Firmware\\CUSTOM\\README.txt</text>
 <attribute name="NAME" x="82.3214" y="76.835" size="1.27" layer="95" rot="R90" align="center"/>
 <attribute name="VALUE" x="86.36" y="76.835" size="1.27" layer="96" rot="R90" align="center"/>
 </instance>
-<instance part="SUPPLY25" gate="G$1" x="149.225" y="67.945" smashed="yes" grouprefs="BUZZER"/>
+<instance part="Y1" gate="U1" x="97.155" y="134.62" smashed="yes" rot="R270">
+<attribute name="NAME" x="100.0125" y="134.62" size="1.27" layer="95" rot="R270" align="center"/>
+<attribute name="VALUE" x="94.2975" y="134.62" size="1.27" layer="96" rot="R270" align="center"/>
+</instance>
+<instance part="C4" gate="G$1" x="89.535" y="139.7" smashed="yes" rot="R270">
+<attribute name="NAME" x="88.1888" y="142.8115" size="1.27" layer="95" align="center"/>
+<attribute name="VALUE" x="88.1634" y="136.525" size="1.27" layer="96" align="center"/>
+</instance>
+<instance part="C5" gate="G$1" x="88.9" y="129.54" smashed="yes" rot="R270">
+<attribute name="NAME" x="87.5538" y="132.6515" size="1.27" layer="95" align="center"/>
+<attribute name="VALUE" x="87.5284" y="126.365" size="1.27" layer="96" align="center"/>
+</instance>
+<instance part="SUPPLY27" gate="G$1" x="81.915" y="125.73" smashed="yes"/>
 </instances>
 <busses>
 </busses>
@@ -7722,7 +7854,7 @@ checks Firmware\\CUSTOM\\README.txt</text>
 <wire x1="92.71" y1="147.32" x2="81.915" y2="147.32" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
 <wire x1="81.915" y1="147.32" x2="81.915" y2="149.225" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
 <pinref part="SUPPLY5" gate="G$1" pin="0V"/>
-<wire x1="81.915" y1="144.78" x2="81.915" y2="147.32" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<wire x1="81.915" y1="146.05" x2="81.915" y2="147.32" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
 <junction x="81.915" y="147.32" grouprefs="MICROCONTROLLER"/>
 <pinref part="C17" gate="G$1" pin="2"/>
 <wire x1="92.71" y1="149.225" x2="92.71" y2="147.32" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
@@ -7801,9 +7933,14 @@ checks Firmware\\CUSTOM\\README.txt</text>
 <wire x1="64.135" y1="36.83" x2="64.135" y2="39.37" width="0.1524" layer="91" grouprefs="RED_LED"/>
 </segment>
 <segment>
-<pinref part="LS1" gate="G$1" pin="-"/>
-<pinref part="SUPPLY25" gate="G$1" pin="0V"/>
-<wire x1="149.225" y1="70.485" x2="149.225" y2="73.025" width="0.1524" layer="91" grouprefs="BUZZER"/>
+<pinref part="C5" gate="G$1" pin="2"/>
+<pinref part="SUPPLY27" gate="G$1" pin="0V"/>
+<wire x1="83.82" y1="129.54" x2="81.915" y2="129.54" width="0.1524" layer="91"/>
+<wire x1="81.915" y1="129.54" x2="81.915" y2="128.27" width="0.1524" layer="91"/>
+<pinref part="C4" gate="G$1" pin="2"/>
+<wire x1="84.455" y1="139.7" x2="81.915" y2="139.7" width="0.1524" layer="91"/>
+<wire x1="81.915" y1="139.7" x2="81.915" y2="129.54" width="0.1524" layer="91"/>
+<junction x="81.915" y="129.54"/>
 </segment>
 </net>
 <net name="MCU_ICSP_MISO" class="0">
@@ -8143,7 +8280,7 @@ checks Firmware\\CUSTOM\\README.txt</text>
 <junction x="64.135" y="52.705" grouprefs="RED_LED"/>
 </segment>
 </net>
-<net name="GPIO_BUZZER" class="0">
+<net name="GPIO_BUZZER_AC+" class="0">
 <segment>
 <label x="142.24" y="161.29" size="1.27" layer="95" xref="yes" grouprefs="MICROCONTROLLER"/>
 <pinref part="U6" gate="G$1" pin="PB1"/>
@@ -8362,6 +8499,41 @@ checks Firmware\\CUSTOM\\README.txt</text>
 <wire x1="149.225" y1="88.9" x2="149.225" y2="85.725" width="0.1524" layer="91" grouprefs="BUZZER"/>
 </segment>
 </net>
+<net name="GPIO_BUZZER_AC-" class="0">
+<segment>
+<pinref part="U6" gate="G$1" pin="PB2"/>
+<wire x1="137.795" y1="158.75" x2="142.24" y2="158.75" width="0.1524" layer="91"/>
+<label x="142.24" y="158.75" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="LS1" gate="G$1" pin="-"/>
+<wire x1="149.225" y1="73.025" x2="149.225" y2="70.485" width="0.1524" layer="91"/>
+<wire x1="149.225" y1="70.485" x2="125.73" y2="70.485" width="0.1524" layer="91"/>
+<label x="125.73" y="70.485" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="N$12" class="0">
+<segment>
+<pinref part="U6" gate="G$1" pin="PB6"/>
+<wire x1="102.235" y1="139.7" x2="97.155" y2="139.7" width="0.1524" layer="91"/>
+<pinref part="Y1" gate="U1" pin="1"/>
+<wire x1="97.155" y1="137.16" x2="97.155" y2="139.7" width="0.1524" layer="91"/>
+<pinref part="C4" gate="G$1" pin="1"/>
+<wire x1="92.075" y1="139.7" x2="97.155" y2="139.7" width="0.1524" layer="91"/>
+<junction x="97.155" y="139.7"/>
+</segment>
+</net>
+<net name="N$6" class="0">
+<segment>
+<pinref part="Y1" gate="U1" pin="2"/>
+<pinref part="U6" gate="G$1" pin="PB7"/>
+<wire x1="97.155" y1="132.08" x2="97.155" y2="129.54" width="0.1524" layer="91"/>
+<pinref part="C5" gate="G$1" pin="1"/>
+<wire x1="97.155" y1="129.54" x2="102.235" y2="129.54" width="0.1524" layer="91"/>
+<wire x1="91.44" y1="129.54" x2="97.155" y2="129.54" width="0.1524" layer="91"/>
+<junction x="97.155" y="129.54"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
@@ -8376,10 +8548,6 @@ checks Firmware\\CUSTOM\\README.txt</text>
 </schematic>
 </drawing>
 <compatibility>
-<note version="6.3" minversion="6.2.2" severity="warning">
-Since Version 6.2.2 text objects can contain more than one line,
-which will not be processed correctly with this version.
-</note>
 <note version="8.2" severity="warning">
 Since Version 8.2, EAGLE supports online libraries. The ids
 of those online libraries will not be understood (or retained)
