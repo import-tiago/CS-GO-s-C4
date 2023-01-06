@@ -1,3 +1,5 @@
+if you are using internal 8MHz osc, you needs changes the bootloader:
+
 1. Install 'AVRDUDESS-2.14-setup.exe'
 
 2. Burn at target MCU the ATmega328P 'custom_bootloader.hex' (that changes
