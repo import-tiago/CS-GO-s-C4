@@ -57,11 +57,31 @@ void tick_beep() {
 	digitalWrite(LED_RED_PIN, state);
 }
 
+void terrorists_win() {
+	LCD.noBlink();
+	LCD.clear();
+	LCD.home();
+	LCD.setCursor(0, 0);
+	LCD.print("TERRORISTS WIN!!");
+
+	countdown_running = false;
+	countdown_finished = true;
+
+	while (1) {
+		toneAC(7000, 10, 50, false);
+		static bool state = true;
+		state = !state;
+		digitalWrite(LED_RED_PIN, state);
+		delay(50);
+	}
+}
+
 void monitor_c4_shell_disconnection() {
 
 	static bool shell1_disconnected = false;
 	static bool shell2_disconnected = false;
 	static bool shell3_disconnected = false;
+	uint32_t secs_remain = (hours * 3600) + (minutes * 60) + seconds;
 
 	if (!shell1_disconnected && (analogRead(C4_SHELL1_PIN) < C4_SHELL_DISCONNECTED_AD_VALUE_MAX)) {
 		shell1_disconnected = true;
@@ -70,21 +90,11 @@ void monitor_c4_shell_disconnection() {
 		if (c4_shell_disconnection_detected == 1) {
 			hours = 0;
 			minutes = 0;
-			if (seconds > SPEED_UP_START_TIME_SECS)
+			if (secs_remain > SPEED_UP_START_TIME_SECS)
 				seconds = SPEED_UP_START_TIME_SECS;
 		}
-		else if (c4_shell_disconnection_detected == 2) {
-			hours = 0;
-			minutes = 0;
-			if (seconds > (2 * (SPEED_UP_START_TIME_SECS / 3)))
-				seconds = SPEED_UP_START_TIME_SECS - (2 * (SPEED_UP_START_TIME_SECS / 3));
-		}
-		else if (c4_shell_disconnection_detected == 3) {
-			hours = 0;
-			minutes = 0;
-			if (seconds > (SPEED_UP_START_TIME_SECS / 3))
-				seconds = (SPEED_UP_START_TIME_SECS / 3);
-		}
+		else if (c4_shell_disconnection_detected == 2)
+			terrorists_win();
 	}
 
 	if (!shell2_disconnected && (analogRead(C4_SHELL2_PIN) < C4_SHELL_DISCONNECTED_AD_VALUE_MAX)) {
@@ -94,21 +104,11 @@ void monitor_c4_shell_disconnection() {
 		if (c4_shell_disconnection_detected == 1) {
 			hours = 0;
 			minutes = 0;
-			if (seconds > 30)
-				seconds = 30;
+			if (secs_remain > SPEED_UP_START_TIME_SECS)
+				seconds = SPEED_UP_START_TIME_SECS;
 		}
-		else if (c4_shell_disconnection_detected == 2) {
-			hours = 0;
-			minutes = 0;
-			if (seconds > 20)
-				seconds = 20;
-		}
-		else if (c4_shell_disconnection_detected == 3) {
-			hours = 0;
-			minutes = 0;
-			if (seconds > 10)
-				seconds = 10;
-		}
+		else if (c4_shell_disconnection_detected == 2)
+			terrorists_win();
 	}
 
 	if (!shell3_disconnected && (analogRead(C4_SHELL3_PIN) < C4_SHELL_DISCONNECTED_AD_VALUE_MAX)) {
@@ -118,21 +118,11 @@ void monitor_c4_shell_disconnection() {
 		if (c4_shell_disconnection_detected == 1) {
 			hours = 0;
 			minutes = 0;
-			if (seconds > 30)
-				seconds = 30;
+			if (secs_remain > SPEED_UP_START_TIME_SECS)
+				seconds = SPEED_UP_START_TIME_SECS;
 		}
-		else if (c4_shell_disconnection_detected == 2) {
-			hours = 0;
-			minutes = 0;
-			if (seconds > 20)
-				seconds = 20;
-		}
-		else if (c4_shell_disconnection_detected == 3) {
-			hours = 0;
-			minutes = 0;
-			if (seconds > 10)
-				seconds = 10;
-		}
+		else if (c4_shell_disconnection_detected == 2)
+			terrorists_win();
 	}
 }
 
@@ -194,25 +184,6 @@ void display_print_current_countdown() {
 		LCD.write('0');
 		LCD.setCursor(11, 1);
 		LCD.print(seconds);
-	}
-}
-
-void terrorists_win() {
-	LCD.noBlink();
-	LCD.clear();
-	LCD.home();
-	LCD.setCursor(0, 0);
-	LCD.print("TERRORISTS WIN!!");
-
-	countdown_running = false;
-	countdown_finished = true;
-
-	while (1) {
-		toneAC(7000, 10, 50, false);
-		static bool state = true;
-		state = !state;
-		digitalWrite(LED_RED_PIN, state);
-		delay(50);
 	}
 }
 
@@ -302,11 +273,11 @@ void setup() {
 
 	LCD.setCursor(0, 0);
 
-	LCD.print("TIMER: HH:MM:SS");
+	LCD.print(" SET COUNTDOWN: ");
 	LCD.setCursor(0, 1);
-	LCD.print("SET:   :  :");
+	LCD.print("    hh:mm:ss    ");
 
-	uint8_t step = 5;
+	uint8_t step = 4;
 
 	uint8_t hour_ten;
 	uint8_t hour_one;
@@ -322,9 +293,9 @@ void setup() {
 
 	do {
 		switch (step) {
-			case 5: {
+			case 4: {
 					char input = KEYPAD.getKey();
-					LCD.setCursor(5, 1);
+					LCD.setCursor(step, 1);
 					LCD.blink();
 					if (input >= '0' && input <= '9') {
 						hour_ten = input - '0';
@@ -335,9 +306,9 @@ void setup() {
 					break;
 				}
 
-			case 6: {
+			case 5: {
 					char input = KEYPAD.getKey();
-					LCD.setCursor(6, 1);
+					LCD.setCursor(step, 1);
 					LCD.blink();
 					if (input >= '0' && input <= '9') {
 						hour_one = input - '0';
@@ -347,16 +318,16 @@ void setup() {
 					}
 					else if (input == '*') {
 						toneAC(5000, buzzer_volume, 100, false);
-						LCD.setCursor(5, 1);
+						LCD.setCursor(step - 1, 1);
 						LCD.print(" ");
 						step--;
 					}
 					break;
 				}
 
-			case 7: {
+			case 6: {
 					char input = KEYPAD.getKey();
-					LCD.setCursor(8, 1);
+					LCD.setCursor(step + 1, 1);
 					LCD.blink();
 					if (input >= '0' && input <= '9') {
 						min_ten = input - '0';
@@ -366,15 +337,15 @@ void setup() {
 					}
 					else if (input == '*') {
 						toneAC(5000, buzzer_volume, 100, false);
-						LCD.setCursor(6, 1);
+						LCD.setCursor(step - 1, 1);
 						LCD.print(" ");
 						step--;
 					}
 					break;
 				}
-			case 8: {
+			case 7: {
 					char input = KEYPAD.getKey();
-					LCD.setCursor(9, 1);
+					LCD.setCursor(step + 1, 1);
 					LCD.blink();
 					if (input >= '0' && input <= '9') {
 						min_one = input - '0';
@@ -397,7 +368,26 @@ void setup() {
 					}
 					else if (input == '*') {
 						toneAC(5000, buzzer_volume, 100, false);
-						LCD.setCursor(8, 1);
+						LCD.setCursor(step, 1);
+						LCD.print(" ");
+						step--;
+					}
+					break;
+				}
+
+			case 8: {
+					char input = KEYPAD.getKey();
+					LCD.setCursor(step + 2, 1);
+					LCD.blink();
+					if (input >= '0' && input <= '9') {
+						sec_ten = input - '0';
+						toneAC(5000, buzzer_volume, 100, false);
+						LCD.print(input);
+						step++;
+					}
+					else if (input == '*') {
+						toneAC(5000, buzzer_volume, 100, false);
+						LCD.setCursor(step, 1);
 						LCD.print(" ");
 						step--;
 					}
@@ -406,26 +396,7 @@ void setup() {
 
 			case 9: {
 					char input = KEYPAD.getKey();
-					LCD.setCursor(11, 1);
-					LCD.blink();
-					if (input >= '0' && input <= '9') {
-						sec_ten = input - '0';
-						toneAC(5000, buzzer_volume, 100, false);
-						LCD.print(input);
-						step = 10;
-					}
-					else if (input == '*') {
-						toneAC(5000, buzzer_volume, 100, false);
-						LCD.setCursor(9, 1);
-						LCD.print(" ");
-						step--;
-					}
-					break;
-				}
-
-			case 10: {
-					char input = KEYPAD.getKey();
-					LCD.setCursor(12, 1);
+					LCD.setCursor(step + 2, 1);
 					LCD.blink();
 					if (input >= '0' && input <= '9') {
 						sec_one = input - '0';
@@ -443,22 +414,22 @@ void setup() {
 							delay(3000);
 							reset_system();
 						}
-						step = 11;
+						step++;
 					}
 					else if (input == '*') {
 						toneAC(5000, buzzer_volume, 100, false);
-						LCD.setCursor(11, 1);
+						LCD.setCursor(step + 1, 1);
 						LCD.print(" ");
 						step--;
 					}
 					break;
 				}
 
-			case 11: {
+			case 10: {
 					hours = (hour_ten * 10) + hour_one;
 					minutes = (min_ten * 10) + min_one;
 					seconds = (sec_ten * 10) + sec_one;
-					delay(200);
+					delay(800);
 					LCD.noBlink();
 					LCD.clear();
 
@@ -467,11 +438,11 @@ void setup() {
 					LCD.setCursor(0, 1);
 					LCD.print("   ACTIVATE!!");
 					delay(50);
-					step = 12;
+					step++;
 					digitalWrite(LED_RED_PIN, HIGH);
 					break;
 				}
-			case 12: {
+			case 11: {
 					char armkey = KEYPAD.getKey();
 
 					if (armkey == '#') {
