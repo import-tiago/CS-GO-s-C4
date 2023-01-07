@@ -7449,7 +7449,7 @@ Source: &lt;a href="https://www.murata.com/products/productdata/8801076772894/SP
 <attributes>
 <attribute name="AUTHOR" value="Tiago Silva"/>
 <attribute name="SOURCE" value="github.com/TiagoPaulaSilva/CS-GO-s-C4"/>
-<attribute name="VERSION" value="1.6"/>
+<attribute name="VERSION" value="1.7"/>
 </attributes>
 <variantdefs>
 </variantdefs>
@@ -7497,7 +7497,6 @@ Source: &lt;a href="https://www.murata.com/products/productdata/8801076772894/SP
 <part name="DS1" library="My-Displays" library_urn="urn:adsk.eagle:library:35510881" deviceset="16X2" device="" package3d_urn="urn:adsk.eagle:package:38713308/1" value="16x2 LCD Display"/>
 <part name="U4" library="My-ICs" library_urn="urn:adsk.eagle:library:35512106" deviceset="PCF8574DW" device="" package3d_urn="urn:adsk.eagle:package:38710811/1"/>
 <part name="SUPPLY1" library="My-Supply" library_urn="urn:adsk.eagle:library:35531236" deviceset="0V" device=""/>
-<part name="R1" library="My-RLC" library_urn="urn:adsk.eagle:library:35509816" deviceset="R_" device="0603" package3d_urn="urn:adsk.eagle:package:35509946/1" value="10k (5%)"/>
 <part name="Q1" library="My-Transistors" library_urn="urn:adsk.eagle:library:35671946" deviceset="NPN-" device="BC817" package3d_urn="urn:adsk.eagle:package:35671962/1"/>
 <part name="R18" library="My-RLC" library_urn="urn:adsk.eagle:library:35509816" deviceset="R_" device="0603" package3d_urn="urn:adsk.eagle:package:35509946/1" value="1k (5%)"/>
 <part name="SUPPLY16" library="My-Supply" library_urn="urn:adsk.eagle:library:35531236" deviceset="0V" device=""/>
@@ -7550,7 +7549,6 @@ Source: &lt;a href="https://www.murata.com/products/productdata/8801076772894/SP
 <part name="SUPPLY15" library="My-Supply" library_urn="urn:adsk.eagle:library:35531236" deviceset="5V" device=""/>
 <part name="SUPPLY17" library="My-Supply" library_urn="urn:adsk.eagle:library:35531236" deviceset="5V" device=""/>
 <part name="SUPPLY19" library="My-Supply" library_urn="urn:adsk.eagle:library:35531236" deviceset="5V" device=""/>
-<part name="SUPPLY20" library="My-Supply" library_urn="urn:adsk.eagle:library:35531236" deviceset="5V" device=""/>
 <part name="SUPPLY21" library="My-Supply" library_urn="urn:adsk.eagle:library:35531236" deviceset="5V" device=""/>
 <part name="SUPPLY22" library="My-Supply" library_urn="urn:adsk.eagle:library:35531236" deviceset="5V" device=""/>
 <part name="SUPPLY23" library="My-Supply" library_urn="urn:adsk.eagle:library:35531236" deviceset="5V" device=""/>
@@ -7560,6 +7558,7 @@ Source: &lt;a href="https://www.murata.com/products/productdata/8801076772894/SP
 <part name="C4" library="My-RLC" library_urn="urn:adsk.eagle:library:35509816" deviceset="C_" device="0603" package3d_urn="urn:adsk.eagle:package:35509984/1" value="22pF"/>
 <part name="C5" library="My-RLC" library_urn="urn:adsk.eagle:library:35509816" deviceset="C_" device="0603" package3d_urn="urn:adsk.eagle:package:35509984/1" value="22pF"/>
 <part name="SUPPLY27" library="My-Supply" library_urn="urn:adsk.eagle:library:35531236" deviceset="0V" device=""/>
+<part name="R6" library="My-RLC" library_urn="urn:adsk.eagle:library:35509816" deviceset="R_" device="0603" package3d_urn="urn:adsk.eagle:package:35509946/1" value="0R (1%)"/>
 </parts>
 <sheets>
 <sheet>
@@ -7586,23 +7585,23 @@ Source: &lt;a href="https://www.murata.com/products/productdata/8801076772894/SP
 <text x="337.185" y="65.0875" size="1.27" layer="135" rot="R270" align="center" grouprefs="C4_SHELLS_DETECTION">C4 SHELL</text>
 </plain>
 <instances>
-<instance part="U6" gate="G$1" x="120.015" y="135.89" smashed="yes" grouprefs="MICROCONTROLLER">
-<attribute name="NAME" x="107.2995" y="169.4626" size="1.4224" layer="95"/>
-<attribute name="VALUE" x="107.3081" y="167.3646" size="1.4224" layer="96"/>
+<instance part="U6" gate="G$1" x="114.935" y="142.875" smashed="yes" grouprefs="MICROCONTROLLER">
+<attribute name="NAME" x="102.2195" y="176.4476" size="1.4224" layer="95"/>
+<attribute name="VALUE" x="102.2281" y="174.3496" size="1.4224" layer="96"/>
 </instance>
-<instance part="C14" gate="G$1" x="81.915" y="154.305" smashed="yes" grouprefs="MICROCONTROLLER">
-<attribute name="NAME" x="78.8035" y="152.9588" size="1.27" layer="95" rot="R90" align="center"/>
-<attribute name="VALUE" x="85.09" y="152.9334" size="1.27" layer="96" rot="R90" align="center"/>
+<instance part="C14" gate="G$1" x="76.835" y="161.29" smashed="yes" grouprefs="MICROCONTROLLER">
+<attribute name="NAME" x="73.7235" y="159.9438" size="1.27" layer="95" rot="R90" align="center"/>
+<attribute name="VALUE" x="80.01" y="159.9184" size="1.27" layer="96" rot="R90" align="center"/>
 </instance>
-<instance part="SUPPLY5" gate="G$1" x="81.915" y="143.51" smashed="yes" grouprefs="MICROCONTROLLER"/>
-<instance part="CN2" gate="A" x="73.025" y="116.84" smashed="yes" rot="MR0" grouprefs="MICROCONTROLLER">
-<attribute name="NAME" x="65.405" y="124.7775" size="1.27" layer="95"/>
-<attribute name="VALUE" x="65.405" y="122.8725" size="1.27" layer="96"/>
+<instance part="SUPPLY5" gate="G$1" x="76.835" y="150.495" smashed="yes" grouprefs="MICROCONTROLLER"/>
+<instance part="CN2" gate="A" x="67.945" y="123.825" smashed="yes" rot="MR0" grouprefs="MICROCONTROLLER">
+<attribute name="NAME" x="60.325" y="131.7625" size="1.27" layer="95"/>
+<attribute name="VALUE" x="60.325" y="129.8575" size="1.27" layer="96"/>
 </instance>
-<instance part="SUPPLY7" gate="G$1" x="61.595" y="106.045" smashed="yes" grouprefs="MICROCONTROLLER"/>
-<instance part="C17" gate="G$1" x="92.71" y="154.305" smashed="yes" grouprefs="MICROCONTROLLER">
-<attribute name="NAME" x="89.5985" y="152.9588" size="1.27" layer="95" rot="R90" align="center"/>
-<attribute name="VALUE" x="95.885" y="152.9334" size="1.27" layer="96" rot="R90" align="center"/>
+<instance part="SUPPLY7" gate="G$1" x="56.515" y="113.03" smashed="yes" grouprefs="MICROCONTROLLER"/>
+<instance part="C17" gate="G$1" x="87.63" y="161.29" smashed="yes" grouprefs="MICROCONTROLLER">
+<attribute name="NAME" x="84.5185" y="159.9438" size="1.27" layer="95" rot="R90" align="center"/>
+<attribute name="VALUE" x="90.805" y="159.9184" size="1.27" layer="96" rot="R90" align="center"/>
 </instance>
 <instance part="R2" gate="G$1" x="290.195" y="63.5" smashed="yes" rot="R90" grouprefs="C4_SHELLS_DETECTION">
 <attribute name="NAME" x="288.0614" y="63.5" size="1.27" layer="95" rot="R90" align="center"/>
@@ -7662,56 +7661,52 @@ Source: &lt;a href="https://www.murata.com/products/productdata/8801076772894/SP
 <attribute name="VALUE" x="283.845" y="73.025" size="1.27" layer="96" align="center"/>
 </instance>
 <instance part="KP1" gate="G$1" x="223.52" y="97.79" smashed="yes" grouprefs="KEYPAD"/>
-<instance part="DS1" gate="1" x="267.97" y="213.36" smashed="yes" grouprefs="LCD_DISPLAY">
-<attribute name="VALUE" x="240.03" y="221.615" size="1.27" layer="96"/>
-<attribute name="NAME" x="240.03" y="223.52" size="1.27" layer="95"/>
+<instance part="DS1" gate="1" x="271.145" y="212.725" smashed="yes" grouprefs="LCD_DISPLAY">
+<attribute name="VALUE" x="243.205" y="220.98" size="1.27" layer="96"/>
+<attribute name="NAME" x="243.205" y="222.885" size="1.27" layer="95"/>
 </instance>
-<instance part="U4" gate="A" x="264.16" y="154.94" smashed="yes" grouprefs="LCD_DISPLAY">
-<attribute name="NAME" x="241.6175" y="172.7675" size="1.27" layer="95" ratio="10" rot="SR0"/>
-<attribute name="VALUE" x="241.6175" y="170.9425" size="1.27" layer="96" ratio="10" rot="SR0"/>
+<instance part="U4" gate="A" x="267.335" y="154.305" smashed="yes" grouprefs="LCD_DISPLAY">
+<attribute name="NAME" x="244.7925" y="172.1325" size="1.27" layer="95" ratio="10" rot="SR0"/>
+<attribute name="VALUE" x="244.7925" y="170.3075" size="1.27" layer="96" ratio="10" rot="SR0"/>
 </instance>
-<instance part="SUPPLY1" gate="G$1" x="232.41" y="198.755" smashed="yes" grouprefs="LCD_DISPLAY"/>
-<instance part="R1" gate="G$1" x="339.09" y="161.925" smashed="yes" rot="R90" grouprefs="LCD_DISPLAY">
-<attribute name="NAME" x="336.9564" y="161.925" size="1.27" layer="95" rot="R90" align="center"/>
-<attribute name="VALUE" x="340.995" y="161.925" size="1.27" layer="96" rot="R90" align="center"/>
+<instance part="SUPPLY1" gate="G$1" x="235.585" y="198.12" smashed="yes" grouprefs="LCD_DISPLAY"/>
+<instance part="Q1" gate="G$1" x="295.275" y="191.135" smashed="yes" rot="MR0" grouprefs="LCD_DISPLAY">
+<attribute name="NAME" x="291.211" y="191.389" size="1.778" layer="95" rot="MR0"/>
+<attribute name="FAMILY" x="291.211" y="189.484" size="1.27" layer="96" rot="MR0"/>
 </instance>
-<instance part="Q1" gate="G$1" x="292.1" y="191.77" smashed="yes" rot="MR0" grouprefs="LCD_DISPLAY">
-<attribute name="NAME" x="288.036" y="192.024" size="1.778" layer="95" rot="MR0"/>
-<attribute name="FAMILY" x="288.036" y="190.119" size="1.27" layer="96" rot="MR0"/>
+<instance part="R18" gate="G$1" x="304.165" y="191.135" smashed="yes" rot="MR0" grouprefs="LCD_DISPLAY">
+<attribute name="NAME" x="304.165" y="193.2686" size="1.27" layer="95" rot="MR0" align="center"/>
+<attribute name="VALUE" x="304.165" y="189.23" size="1.27" layer="96" rot="MR0" align="center"/>
 </instance>
-<instance part="R18" gate="G$1" x="300.99" y="191.77" smashed="yes" rot="MR0" grouprefs="LCD_DISPLAY">
-<attribute name="NAME" x="300.99" y="193.9036" size="1.27" layer="95" rot="MR0" align="center"/>
-<attribute name="VALUE" x="300.99" y="189.865" size="1.27" layer="96" rot="MR0" align="center"/>
+<instance part="SUPPLY16" gate="G$1" x="292.735" y="182.245" smashed="yes" rot="MR0" grouprefs="LCD_DISPLAY"/>
+<instance part="R20" gate="G$1" x="302.26" y="161.29" smashed="yes" rot="R90" grouprefs="LCD_DISPLAY">
+<attribute name="NAME" x="300.1264" y="161.29" size="1.27" layer="95" rot="R90" align="center"/>
+<attribute name="VALUE" x="304.165" y="161.29" size="1.27" layer="96" rot="R90" align="center"/>
 </instance>
-<instance part="SUPPLY16" gate="G$1" x="289.56" y="182.88" smashed="yes" rot="MR0" grouprefs="LCD_DISPLAY"/>
-<instance part="R20" gate="G$1" x="299.085" y="161.925" smashed="yes" rot="R90" grouprefs="LCD_DISPLAY">
-<attribute name="NAME" x="296.9514" y="161.925" size="1.27" layer="95" rot="R90" align="center"/>
-<attribute name="VALUE" x="300.99" y="161.925" size="1.27" layer="96" rot="R90" align="center"/>
+<instance part="R21" gate="G$1" x="222.885" y="153.67" smashed="yes" rot="R90" grouprefs="LCD_DISPLAY">
+<attribute name="NAME" x="220.7514" y="153.67" size="1.27" layer="95" rot="R90" align="center"/>
+<attribute name="VALUE" x="224.79" y="153.67" size="1.27" layer="96" rot="R90" align="center"/>
 </instance>
-<instance part="R21" gate="G$1" x="219.71" y="154.305" smashed="yes" rot="R90" grouprefs="LCD_DISPLAY">
-<attribute name="NAME" x="217.5764" y="154.305" size="1.27" layer="95" rot="R90" align="center"/>
-<attribute name="VALUE" x="221.615" y="154.305" size="1.27" layer="96" rot="R90" align="center"/>
+<instance part="R22" gate="G$1" x="213.995" y="153.67" smashed="yes" rot="R90" grouprefs="LCD_DISPLAY">
+<attribute name="NAME" x="211.8614" y="153.67" size="1.27" layer="95" rot="R90" align="center"/>
+<attribute name="VALUE" x="215.9" y="153.67" size="1.27" layer="96" rot="R90" align="center"/>
 </instance>
-<instance part="R22" gate="G$1" x="210.82" y="154.305" smashed="yes" rot="R90" grouprefs="LCD_DISPLAY">
-<attribute name="NAME" x="208.6864" y="154.305" size="1.27" layer="95" rot="R90" align="center"/>
-<attribute name="VALUE" x="212.725" y="154.305" size="1.27" layer="96" rot="R90" align="center"/>
+<instance part="R23" gate="G$1" x="331.47" y="161.29" smashed="yes" rot="R90" grouprefs="LCD_DISPLAY">
+<attribute name="NAME" x="329.3364" y="161.29" size="1.27" layer="95" rot="R90" align="center"/>
+<attribute name="VALUE" x="333.375" y="161.29" size="1.27" layer="96" rot="R90" align="center"/>
 </instance>
-<instance part="R23" gate="G$1" x="328.295" y="161.925" smashed="yes" rot="R90" grouprefs="LCD_DISPLAY">
-<attribute name="NAME" x="326.1614" y="161.925" size="1.27" layer="95" rot="R90" align="center"/>
-<attribute name="VALUE" x="330.2" y="161.925" size="1.27" layer="96" rot="R90" align="center"/>
+<instance part="R24" gate="G$1" x="321.31" y="161.29" smashed="yes" rot="R90" grouprefs="LCD_DISPLAY">
+<attribute name="NAME" x="319.1764" y="161.29" size="1.27" layer="95" rot="R90" align="center"/>
+<attribute name="VALUE" x="323.215" y="161.29" size="1.27" layer="96" rot="R90" align="center"/>
 </instance>
-<instance part="R24" gate="G$1" x="318.135" y="161.925" smashed="yes" rot="R90" grouprefs="LCD_DISPLAY">
-<attribute name="NAME" x="316.0014" y="161.925" size="1.27" layer="95" rot="R90" align="center"/>
-<attribute name="VALUE" x="320.04" y="161.925" size="1.27" layer="96" rot="R90" align="center"/>
+<instance part="R25" gate="G$1" x="311.785" y="161.29" smashed="yes" rot="R90" grouprefs="LCD_DISPLAY">
+<attribute name="NAME" x="309.6514" y="161.29" size="1.27" layer="95" rot="R90" align="center"/>
+<attribute name="VALUE" x="313.69" y="161.29" size="1.27" layer="96" rot="R90" align="center"/>
 </instance>
-<instance part="R25" gate="G$1" x="308.61" y="161.925" smashed="yes" rot="R90" grouprefs="LCD_DISPLAY">
-<attribute name="NAME" x="306.4764" y="161.925" size="1.27" layer="95" rot="R90" align="center"/>
-<attribute name="VALUE" x="310.515" y="161.925" size="1.27" layer="96" rot="R90" align="center"/>
-</instance>
-<instance part="SUPPLY18" gate="G$1" x="229.235" y="149.86" smashed="yes" grouprefs="LCD_DISPLAY"/>
-<instance part="C1" gate="G$1" x="229.235" y="162.56" smashed="yes" grouprefs="LCD_DISPLAY">
-<attribute name="NAME" x="226.1235" y="161.2138" size="1.27" layer="95" rot="R90" align="center"/>
-<attribute name="VALUE" x="232.41" y="161.1884" size="1.27" layer="96" rot="R90" align="center"/>
+<instance part="SUPPLY18" gate="G$1" x="232.41" y="149.225" smashed="yes" grouprefs="LCD_DISPLAY"/>
+<instance part="C1" gate="G$1" x="232.41" y="161.925" smashed="yes" grouprefs="LCD_DISPLAY">
+<attribute name="NAME" x="229.2985" y="160.5788" size="1.27" layer="95" rot="R90" align="center"/>
+<attribute name="VALUE" x="235.585" y="160.5534" size="1.27" layer="96" rot="R90" align="center"/>
 </instance>
 <instance part="LED4" gate="G$1" x="84.455" y="66.04" smashed="yes" grouprefs="RED_LED">
 <attribute name="NAME" x="86.8045" y="66.04" size="1.27" layer="95" rot="R90" align="center"/>
@@ -7745,82 +7740,79 @@ Source: &lt;a href="https://www.murata.com/products/productdata/8801076772894/SP
 <attribute name="AUTHOR" x="322.58" y="26.67" size="5.08" layer="94" align="center"/>
 <attribute name="SOURCE" x="322.58" y="19.939" size="2.032" layer="94" align="center"/>
 </instance>
-<instance part="U1" gate="G$1" x="101.6" y="219.075" smashed="yes" grouprefs="POWER_SUPPLY">
-<attribute name="NAME" x="93.98" y="227.33" size="1.778" layer="95" align="center-left"/>
-<attribute name="FAMILY" x="93.98" y="225.425" size="1.27" layer="96" align="center-left"/>
+<instance part="U1" gate="G$1" x="107.95" y="220.98" smashed="yes" grouprefs="POWER_SUPPLY">
+<attribute name="NAME" x="100.33" y="229.235" size="1.778" layer="95" align="center-left"/>
+<attribute name="FAMILY" x="100.33" y="227.33" size="1.27" layer="96" align="center-left"/>
 </instance>
-<instance part="C2" gate="G$1" x="121.92" y="212.725" smashed="yes" grouprefs="POWER_SUPPLY">
-<attribute name="VALUE" x="124.714" y="211.455" size="1.27" layer="96" rot="R90" align="center"/>
-<attribute name="NAME" x="119.634" y="211.5566" size="1.27" layer="95" align="center-right"/>
+<instance part="C2" gate="G$1" x="128.27" y="214.63" smashed="yes" grouprefs="POWER_SUPPLY">
+<attribute name="VALUE" x="131.064" y="213.36" size="1.27" layer="96" rot="R90" align="center"/>
+<attribute name="NAME" x="125.984" y="213.4616" size="1.27" layer="95" align="center-right"/>
 </instance>
-<instance part="C3" gate="G$1" x="85.09" y="212.725" smashed="yes" grouprefs="POWER_SUPPLY">
-<attribute name="VALUE" x="87.884" y="211.455" size="1.27" layer="96" rot="R90" align="center"/>
-<attribute name="NAME" x="82.804" y="211.5566" size="1.27" layer="95" align="center-right"/>
+<instance part="C3" gate="G$1" x="91.44" y="214.63" smashed="yes" grouprefs="POWER_SUPPLY">
+<attribute name="VALUE" x="94.234" y="213.36" size="1.27" layer="96" rot="R90" align="center"/>
+<attribute name="NAME" x="89.154" y="213.4616" size="1.27" layer="95" align="center-right"/>
 </instance>
-<instance part="CN1" gate="G$1" x="64.135" y="210.185" smashed="yes" grouprefs="POWER_SUPPLY">
-<attribute name="NAME" x="60.325" y="210.185" size="1.27" layer="95" rot="R270" align="center"/>
-<attribute name="CAPACITY" x="67.691" y="209.169" size="1.27" layer="96" align="center-left"/>
-<attribute name="TYPE" x="67.691" y="212.725" size="1.27" layer="96" align="center-left"/>
-<attribute name="VOLTAGE" x="67.691" y="210.947" size="1.27" layer="96" align="center-left"/>
+<instance part="CN1" gate="G$1" x="70.485" y="212.09" smashed="yes" grouprefs="POWER_SUPPLY">
+<attribute name="NAME" x="66.675" y="212.09" size="1.27" layer="95" rot="R270" align="center"/>
+<attribute name="CAPACITY" x="74.041" y="211.074" size="1.27" layer="96" align="center-left"/>
+<attribute name="TYPE" x="74.041" y="214.63" size="1.27" layer="96" align="center-left"/>
+<attribute name="VOLTAGE" x="74.041" y="212.852" size="1.27" layer="96" align="center-left"/>
 </instance>
-<instance part="SUPPLY12" gate="G$1" x="64.135" y="191.77" smashed="yes" grouprefs="POWER_SUPPLY"/>
-<instance part="SUPPLY14" gate="G$1" x="121.92" y="228.6" smashed="yes" grouprefs="POWER_SUPPLY">
-<attribute name="VALUE" x="121.9454" y="232.41" size="1.778" layer="96" align="center"/>
+<instance part="SUPPLY12" gate="G$1" x="70.485" y="193.675" smashed="yes" grouprefs="POWER_SUPPLY"/>
+<instance part="SUPPLY14" gate="G$1" x="128.27" y="230.505" smashed="yes" grouprefs="POWER_SUPPLY">
+<attribute name="VALUE" x="128.2954" y="234.315" size="1.778" layer="96" align="center"/>
 </instance>
-<instance part="SUPPLY26" gate="G$1" x="64.135" y="228.6" smashed="yes" grouprefs="POWER_SUPPLY">
-<attribute name="VALUE" x="64.1604" y="232.41" size="1.778" layer="96" align="center"/>
+<instance part="SUPPLY26" gate="G$1" x="70.485" y="230.505" smashed="yes" grouprefs="POWER_SUPPLY">
+<attribute name="VALUE" x="70.5104" y="234.315" size="1.778" layer="96" align="center"/>
 </instance>
 <instance part="R5" gate="G$1" x="64.135" y="44.45" smashed="yes" rot="R90" grouprefs="RED_LED">
 <attribute name="NAME" x="62.0014" y="44.45" size="1.27" layer="95" rot="R90" align="center"/>
 <attribute name="VALUE" x="66.04" y="44.45" size="1.27" layer="96" rot="R90" align="center"/>
 </instance>
 <instance part="SUPPLY28" gate="G$1" x="64.135" y="34.29" smashed="yes" grouprefs="RED_LED"/>
-<instance part="SW1" gate="G$1" x="76.835" y="221.615" smashed="yes" rot="R270" grouprefs="POWER_SUPPLY">
-<attribute name="NAME" x="75.565" y="227.6475" size="1.778" layer="95" align="center"/>
-<attribute name="FAMILY" x="75.565" y="219.9005" size="1.016" layer="96" align="center"/>
+<instance part="SW1" gate="G$1" x="83.185" y="223.52" smashed="yes" rot="R270" grouprefs="POWER_SUPPLY">
+<attribute name="NAME" x="81.915" y="229.5525" size="1.778" layer="95" align="center"/>
+<attribute name="FAMILY" x="81.915" y="221.8055" size="1.016" layer="96" align="center"/>
 </instance>
-<instance part="RV1" gate="G$1" x="232.41" y="210.82" smashed="yes" grouprefs="LCD_DISPLAY">
-<attribute name="NAME" x="227.33" y="210.82" size="1.27" layer="95" ratio="10" rot="R90" align="center"/>
-<attribute name="VALUE" x="228.9175" y="210.82" size="1.27" layer="96" ratio="10" rot="R90" align="center"/>
+<instance part="RV1" gate="G$1" x="235.585" y="210.185" smashed="yes" grouprefs="LCD_DISPLAY">
+<attribute name="NAME" x="230.505" y="210.185" size="1.27" layer="95" ratio="10" rot="R90" align="center"/>
+<attribute name="VALUE" x="232.0925" y="210.185" size="1.27" layer="96" ratio="10" rot="R90" align="center"/>
 </instance>
-<instance part="SUPPLY2" gate="G$1" x="232.41" y="228.6" smashed="yes" grouprefs="LCD_DISPLAY">
-<attribute name="VALUE" x="232.4354" y="232.41" size="1.778" layer="96" align="center"/>
+<instance part="SUPPLY2" gate="G$1" x="235.585" y="227.965" smashed="yes" grouprefs="LCD_DISPLAY">
+<attribute name="VALUE" x="235.6104" y="231.775" size="1.778" layer="96" align="center"/>
 </instance>
-<instance part="SUPPLY3" gate="G$1" x="289.56" y="228.6" smashed="yes" grouprefs="LCD_DISPLAY">
-<attribute name="VALUE" x="289.5854" y="232.41" size="1.778" layer="96" align="center"/>
+<instance part="SUPPLY3" gate="G$1" x="292.735" y="227.965" smashed="yes" grouprefs="LCD_DISPLAY">
+<attribute name="VALUE" x="292.7604" y="231.775" size="1.778" layer="96" align="center"/>
 </instance>
-<instance part="SUPPLY4" gate="G$1" x="210.82" y="172.72" smashed="yes" grouprefs="LCD_DISPLAY">
-<attribute name="VALUE" x="210.8454" y="176.53" size="1.778" layer="96" align="center"/>
+<instance part="SUPPLY4" gate="G$1" x="213.995" y="172.085" smashed="yes" grouprefs="LCD_DISPLAY">
+<attribute name="VALUE" x="214.0204" y="175.895" size="1.778" layer="96" align="center"/>
 </instance>
-<instance part="SUPPLY6" gate="G$1" x="219.71" y="172.72" smashed="yes" grouprefs="LCD_DISPLAY">
-<attribute name="VALUE" x="219.7354" y="176.53" size="1.778" layer="96" align="center"/>
+<instance part="SUPPLY6" gate="G$1" x="222.885" y="172.085" smashed="yes" grouprefs="LCD_DISPLAY">
+<attribute name="VALUE" x="222.9104" y="175.895" size="1.778" layer="96" align="center"/>
 </instance>
-<instance part="SUPPLY8" gate="G$1" x="229.235" y="172.72" smashed="yes" grouprefs="LCD_DISPLAY">
-<attribute name="VALUE" x="229.2604" y="176.53" size="1.778" layer="96" align="center"/>
+<instance part="SUPPLY8" gate="G$1" x="232.41" y="172.085" smashed="yes" grouprefs="LCD_DISPLAY">
+<attribute name="VALUE" x="232.4354" y="175.895" size="1.778" layer="96" align="center"/>
 </instance>
-<instance part="SUPPLY13" gate="G$1" x="299.085" y="172.72" smashed="yes" grouprefs="LCD_DISPLAY">
-<attribute name="VALUE" x="299.1104" y="176.53" size="1.778" layer="96" align="center"/>
+<instance part="SUPPLY13" gate="G$1" x="302.26" y="172.085" smashed="yes" grouprefs="LCD_DISPLAY">
+<attribute name="VALUE" x="302.2854" y="175.895" size="1.778" layer="96" align="center"/>
 </instance>
-<instance part="SUPPLY15" gate="G$1" x="308.61" y="172.72" smashed="yes" grouprefs="LCD_DISPLAY">
-<attribute name="VALUE" x="308.6354" y="176.53" size="1.778" layer="96" align="center"/>
+<instance part="SUPPLY15" gate="G$1" x="311.785" y="172.085" smashed="yes" grouprefs="LCD_DISPLAY">
+<attribute name="VALUE" x="311.8104" y="175.895" size="1.778" layer="96" align="center"/>
 </instance>
-<instance part="SUPPLY17" gate="G$1" x="318.135" y="172.72" smashed="yes" grouprefs="LCD_DISPLAY">
-<attribute name="VALUE" x="318.1604" y="176.53" size="1.778" layer="96" align="center"/>
+<instance part="SUPPLY17" gate="G$1" x="321.31" y="172.085" smashed="yes" grouprefs="LCD_DISPLAY">
+<attribute name="VALUE" x="321.3354" y="175.895" size="1.778" layer="96" align="center"/>
 </instance>
-<instance part="SUPPLY19" gate="G$1" x="328.295" y="172.72" smashed="yes" grouprefs="LCD_DISPLAY">
-<attribute name="VALUE" x="328.3204" y="176.53" size="1.778" layer="96" align="center"/>
-</instance>
-<instance part="SUPPLY20" gate="G$1" x="339.09" y="172.72" smashed="yes" grouprefs="LCD_DISPLAY">
-<attribute name="VALUE" x="339.1154" y="176.53" size="1.778" layer="96" align="center"/>
+<instance part="SUPPLY19" gate="G$1" x="331.47" y="172.085" smashed="yes" grouprefs="LCD_DISPLAY">
+<attribute name="VALUE" x="331.4954" y="175.895" size="1.778" layer="96" align="center"/>
 </instance>
 <instance part="SUPPLY21" gate="G$1" x="266.7" y="116.205" smashed="yes" grouprefs="C4_SHELLS_DETECTION">
 <attribute name="VALUE" x="266.7254" y="120.015" size="1.778" layer="96" align="center"/>
 </instance>
-<instance part="SUPPLY22" gate="G$1" x="81.915" y="168.91" smashed="yes" grouprefs="MICROCONTROLLER">
-<attribute name="VALUE" x="81.9404" y="172.72" size="1.778" layer="96" align="center"/>
+<instance part="SUPPLY22" gate="G$1" x="76.835" y="175.895" smashed="yes" grouprefs="MICROCONTROLLER">
+<attribute name="VALUE" x="76.8604" y="179.705" size="1.778" layer="96" align="center"/>
 </instance>
-<instance part="SUPPLY23" gate="G$1" x="61.595" y="125.73" smashed="yes" grouprefs="MICROCONTROLLER">
-<attribute name="VALUE" x="61.6204" y="129.54" size="1.778" layer="96" align="center"/>
+<instance part="SUPPLY23" gate="G$1" x="56.515" y="132.715" smashed="yes" grouprefs="MICROCONTROLLER">
+<attribute name="VALUE" x="56.5404" y="136.525" size="1.778" layer="96" align="center"/>
 </instance>
 <instance part="SUPPLY24" gate="G$1" x="84.455" y="86.995" smashed="yes" grouprefs="RED_LED">
 <attribute name="VALUE" x="84.4804" y="90.805" size="1.778" layer="96" align="center"/>
@@ -7829,19 +7821,23 @@ Source: &lt;a href="https://www.murata.com/products/productdata/8801076772894/SP
 <attribute name="NAME" x="82.3214" y="76.835" size="1.27" layer="95" rot="R90" align="center"/>
 <attribute name="VALUE" x="86.36" y="76.835" size="1.27" layer="96" rot="R90" align="center"/>
 </instance>
-<instance part="Y1" gate="U1" x="97.155" y="134.62" smashed="yes" rot="R270">
-<attribute name="NAME" x="100.0125" y="134.62" size="1.27" layer="95" rot="R270" align="center"/>
-<attribute name="VALUE" x="94.2975" y="134.62" size="1.27" layer="96" rot="R270" align="center"/>
+<instance part="Y1" gate="U1" x="92.075" y="141.605" smashed="yes" rot="R270" grouprefs="MICROCONTROLLER">
+<attribute name="NAME" x="94.9325" y="141.605" size="1.27" layer="95" rot="R270" align="center"/>
+<attribute name="VALUE" x="89.2175" y="141.605" size="1.27" layer="96" rot="R270" align="center"/>
 </instance>
-<instance part="C4" gate="G$1" x="89.535" y="139.7" smashed="yes" rot="R270">
-<attribute name="NAME" x="88.1888" y="142.8115" size="1.27" layer="95" align="center"/>
-<attribute name="VALUE" x="88.1634" y="136.525" size="1.27" layer="96" align="center"/>
+<instance part="C4" gate="G$1" x="84.455" y="146.685" smashed="yes" rot="R270" grouprefs="MICROCONTROLLER">
+<attribute name="NAME" x="83.1088" y="149.7965" size="1.27" layer="95" align="center"/>
+<attribute name="VALUE" x="83.0834" y="143.51" size="1.27" layer="96" align="center"/>
 </instance>
-<instance part="C5" gate="G$1" x="88.9" y="129.54" smashed="yes" rot="R270">
-<attribute name="NAME" x="87.5538" y="132.6515" size="1.27" layer="95" align="center"/>
-<attribute name="VALUE" x="87.5284" y="126.365" size="1.27" layer="96" align="center"/>
+<instance part="C5" gate="G$1" x="83.82" y="136.525" smashed="yes" rot="R270" grouprefs="MICROCONTROLLER">
+<attribute name="NAME" x="82.4738" y="139.6365" size="1.27" layer="95" align="center"/>
+<attribute name="VALUE" x="82.4484" y="133.35" size="1.27" layer="96" align="center"/>
 </instance>
-<instance part="SUPPLY27" gate="G$1" x="81.915" y="125.73" smashed="yes"/>
+<instance part="SUPPLY27" gate="G$1" x="76.835" y="132.715" smashed="yes" grouprefs="MICROCONTROLLER"/>
+<instance part="R6" gate="G$1" x="88.265" y="110.49" smashed="yes" rot="R90" grouprefs="MICROCONTROLLER">
+<attribute name="NAME" x="86.1314" y="110.49" size="1.27" layer="95" rot="R90" align="center"/>
+<attribute name="VALUE" x="90.17" y="110.49" size="1.27" layer="96" rot="R90" align="center"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -7850,21 +7846,21 @@ Source: &lt;a href="https://www.murata.com/products/productdata/8801076772894/SP
 <segment>
 <pinref part="U6" gate="G$1" pin="GND"/>
 <pinref part="C14" gate="G$1" pin="2"/>
-<wire x1="102.235" y1="147.32" x2="92.71" y2="147.32" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
-<wire x1="92.71" y1="147.32" x2="81.915" y2="147.32" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
-<wire x1="81.915" y1="147.32" x2="81.915" y2="149.225" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<wire x1="97.155" y1="154.305" x2="87.63" y2="154.305" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<wire x1="87.63" y1="154.305" x2="76.835" y2="154.305" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<wire x1="76.835" y1="154.305" x2="76.835" y2="156.21" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
 <pinref part="SUPPLY5" gate="G$1" pin="0V"/>
-<wire x1="81.915" y1="146.05" x2="81.915" y2="147.32" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
-<junction x="81.915" y="147.32" grouprefs="MICROCONTROLLER"/>
+<wire x1="76.835" y1="153.035" x2="76.835" y2="154.305" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<junction x="76.835" y="154.305" grouprefs="MICROCONTROLLER"/>
 <pinref part="C17" gate="G$1" pin="2"/>
-<wire x1="92.71" y1="149.225" x2="92.71" y2="147.32" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
-<junction x="92.71" y="147.32" grouprefs="MICROCONTROLLER"/>
+<wire x1="87.63" y1="156.21" x2="87.63" y2="154.305" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<junction x="87.63" y="154.305" grouprefs="MICROCONTROLLER"/>
 </segment>
 <segment>
 <pinref part="CN2" gate="A" pin="6"/>
 <pinref part="SUPPLY7" gate="G$1" pin="0V"/>
-<wire x1="69.215" y1="114.3" x2="61.595" y2="114.3" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
-<wire x1="61.595" y1="114.3" x2="61.595" y2="108.585" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<wire x1="64.135" y1="121.285" x2="56.515" y2="121.285" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<wire x1="56.515" y1="121.285" x2="56.515" y2="115.57" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
 </segment>
 <segment>
 <pinref part="R2" gate="G$1" pin="1"/>
@@ -7884,25 +7880,25 @@ Source: &lt;a href="https://www.murata.com/products/productdata/8801076772894/SP
 <segment>
 <pinref part="Q1" gate="G$1" pin="E"/>
 <pinref part="SUPPLY16" gate="G$1" pin="0V"/>
-<wire x1="289.56" y1="185.42" x2="289.56" y2="186.69" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="292.735" y1="184.785" x2="292.735" y2="186.055" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
 </segment>
 <segment>
 <pinref part="SUPPLY1" gate="G$1" pin="0V"/>
 <pinref part="DS1" gate="1" pin="VSS"/>
-<wire x1="232.41" y1="203.2" x2="232.41" y2="201.295" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
-<wire x1="237.49" y1="203.2" x2="232.41" y2="203.2" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
-<wire x1="232.41" y1="205.74" x2="232.41" y2="203.2" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
-<junction x="232.41" y="203.2" grouprefs="LCD_DISPLAY"/>
+<wire x1="235.585" y1="202.565" x2="235.585" y2="200.66" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="240.665" y1="202.565" x2="235.585" y2="202.565" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="235.585" y1="205.105" x2="235.585" y2="202.565" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<junction x="235.585" y="202.565" grouprefs="LCD_DISPLAY"/>
 <pinref part="RV1" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="U4" gate="A" pin="GND"/>
 <pinref part="C1" gate="G$1" pin="2"/>
-<wire x1="229.235" y1="154.94" x2="236.22" y2="154.94" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
-<wire x1="229.235" y1="157.48" x2="229.235" y2="154.94" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="232.41" y1="154.305" x2="239.395" y2="154.305" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="232.41" y1="156.845" x2="232.41" y2="154.305" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
 <pinref part="SUPPLY18" gate="G$1" pin="0V"/>
-<wire x1="229.235" y1="152.4" x2="229.235" y2="154.94" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
-<junction x="229.235" y="154.94" grouprefs="LCD_DISPLAY"/>
+<wire x1="232.41" y1="151.765" x2="232.41" y2="154.305" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<junction x="232.41" y="154.305" grouprefs="LCD_DISPLAY"/>
 </segment>
 <segment>
 <pinref part="Q3" gate="G$1" pin="S"/>
@@ -7912,20 +7908,20 @@ Source: &lt;a href="https://www.murata.com/products/productdata/8801076772894/SP
 <segment>
 <pinref part="U1" gate="G$1" pin="GND"/>
 <pinref part="CN1" gate="G$1" pin="-"/>
-<wire x1="64.135" y1="206.375" x2="64.135" y2="200.025" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
-<wire x1="64.135" y1="200.025" x2="85.09" y2="200.025" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
-<wire x1="85.09" y1="200.025" x2="101.6" y2="200.025" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
-<wire x1="101.6" y1="200.025" x2="101.6" y2="210.185" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
+<wire x1="70.485" y1="208.28" x2="70.485" y2="201.93" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
+<wire x1="70.485" y1="201.93" x2="91.44" y2="201.93" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
+<wire x1="91.44" y1="201.93" x2="107.95" y2="201.93" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
+<wire x1="107.95" y1="201.93" x2="107.95" y2="212.09" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
 <pinref part="C2" gate="G$1" pin="-"/>
-<wire x1="121.92" y1="207.645" x2="121.92" y2="200.025" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
-<wire x1="121.92" y1="200.025" x2="101.6" y2="200.025" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
-<junction x="101.6" y="200.025" grouprefs="POWER_SUPPLY"/>
+<wire x1="128.27" y1="209.55" x2="128.27" y2="201.93" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
+<wire x1="128.27" y1="201.93" x2="107.95" y2="201.93" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
+<junction x="107.95" y="201.93" grouprefs="POWER_SUPPLY"/>
 <pinref part="SUPPLY12" gate="G$1" pin="0V"/>
-<wire x1="64.135" y1="194.31" x2="64.135" y2="200.025" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
-<junction x="64.135" y="200.025" grouprefs="POWER_SUPPLY"/>
+<wire x1="70.485" y1="196.215" x2="70.485" y2="201.93" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
+<junction x="70.485" y="201.93" grouprefs="POWER_SUPPLY"/>
 <pinref part="C3" gate="G$1" pin="-"/>
-<wire x1="85.09" y1="207.645" x2="85.09" y2="200.025" width="0.1524" layer="91"/>
-<junction x="85.09" y="200.025"/>
+<wire x1="91.44" y1="209.55" x2="91.44" y2="201.93" width="0.1524" layer="91"/>
+<junction x="91.44" y="201.93"/>
 </segment>
 <segment>
 <pinref part="R5" gate="G$1" pin="1"/>
@@ -7935,56 +7931,60 @@ Source: &lt;a href="https://www.murata.com/products/productdata/8801076772894/SP
 <segment>
 <pinref part="C5" gate="G$1" pin="2"/>
 <pinref part="SUPPLY27" gate="G$1" pin="0V"/>
-<wire x1="83.82" y1="129.54" x2="81.915" y2="129.54" width="0.1524" layer="91"/>
-<wire x1="81.915" y1="129.54" x2="81.915" y2="128.27" width="0.1524" layer="91"/>
+<wire x1="78.74" y1="136.525" x2="76.835" y2="136.525" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<wire x1="76.835" y1="136.525" x2="76.835" y2="135.255" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
 <pinref part="C4" gate="G$1" pin="2"/>
-<wire x1="84.455" y1="139.7" x2="81.915" y2="139.7" width="0.1524" layer="91"/>
-<wire x1="81.915" y1="139.7" x2="81.915" y2="129.54" width="0.1524" layer="91"/>
-<junction x="81.915" y="129.54"/>
+<wire x1="79.375" y1="146.685" x2="76.835" y2="146.685" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<wire x1="76.835" y1="146.685" x2="76.835" y2="136.525" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<junction x="76.835" y="136.525" grouprefs="MICROCONTROLLER"/>
 </segment>
 </net>
 <net name="MCU_ICSP_MISO" class="0">
 <segment>
 <pinref part="U6" gate="G$1" pin="PB4"/>
 <pinref part="CN2" gate="A" pin="1"/>
-<wire x1="76.835" y1="119.38" x2="102.235" y2="119.38" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
-<label x="83.82" y="120.015" size="1.27" layer="95" grouprefs="MICROCONTROLLER"/>
+<wire x1="71.755" y1="126.365" x2="97.155" y2="126.365" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<label x="78.74" y="127" size="1.27" layer="95" grouprefs="MICROCONTROLLER"/>
 </segment>
 </net>
 <net name="MCU_ICSP_SCLK" class="0">
 <segment>
 <pinref part="U6" gate="G$1" pin="PB5"/>
 <pinref part="CN2" gate="A" pin="3"/>
-<wire x1="76.835" y1="116.84" x2="102.235" y2="116.84" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
-<label x="83.82" y="117.475" size="1.27" layer="95" grouprefs="MICROCONTROLLER"/>
+<wire x1="71.755" y1="123.825" x2="97.155" y2="123.825" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<label x="78.74" y="124.46" size="1.27" layer="95" grouprefs="MICROCONTROLLER"/>
 </segment>
 </net>
 <net name="!MCU_ICSP_RESET" class="0">
 <segment>
 <pinref part="U6" gate="G$1" pin="PC6/!RESET"/>
 <pinref part="CN2" gate="A" pin="5"/>
-<wire x1="76.835" y1="114.3" x2="102.235" y2="114.3" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
-<label x="83.82" y="114.935" size="1.27" layer="95" grouprefs="MICROCONTROLLER"/>
+<wire x1="71.755" y1="121.285" x2="97.155" y2="121.285" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<label x="78.74" y="121.92" size="1.27" layer="95" grouprefs="MICROCONTROLLER"/>
 </segment>
 </net>
 <net name="MCU_ICSP_MOSI" class="0">
 <segment>
 <pinref part="CN2" gate="A" pin="4"/>
-<wire x1="69.215" y1="116.84" x2="52.07" y2="116.84" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
-<label x="64.135" y="118.4275" size="1.27" layer="95" rot="R180" grouprefs="MICROCONTROLLER"/>
+<wire x1="64.135" y1="123.825" x2="46.99" y2="123.825" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<label x="59.055" y="125.4125" size="1.27" layer="95" rot="R180" grouprefs="MICROCONTROLLER"/>
 </segment>
 <segment>
 <pinref part="U6" gate="G$1" pin="PB3"/>
-<wire x1="102.235" y1="111.76" x2="83.82" y2="111.76" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
-<label x="98.425" y="113.665" size="1.27" layer="95" rot="R180" grouprefs="MICROCONTROLLER"/>
+<wire x1="97.155" y1="118.745" x2="88.265" y2="118.745" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<label x="93.345" y="120.65" size="1.27" layer="95" rot="R180" grouprefs="MICROCONTROLLER"/>
+<pinref part="R6" gate="G$1" pin="2"/>
+<wire x1="88.265" y1="118.745" x2="78.74" y2="118.745" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<wire x1="88.265" y1="115.57" x2="88.265" y2="118.745" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<junction x="88.265" y="118.745" grouprefs="MICROCONTROLLER"/>
 </segment>
 </net>
 <net name="N$21" class="0">
 <segment>
 <pinref part="C17" gate="G$1" pin="1"/>
 <pinref part="U6" gate="G$1" pin="AREF"/>
-<wire x1="92.71" y1="156.845" x2="92.71" y2="158.75" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
-<wire x1="92.71" y1="158.75" x2="102.235" y2="158.75" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<wire x1="87.63" y1="163.83" x2="87.63" y2="165.735" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<wire x1="87.63" y1="165.735" x2="97.155" y2="165.735" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
 </segment>
 </net>
 <net name="N$23" class="0">
@@ -8026,40 +8026,40 @@ Source: &lt;a href="https://www.murata.com/products/productdata/8801076772894/SP
 <net name="LCD_I2C_SDA" class="0">
 <segment>
 <pinref part="U6" gate="G$1" pin="PC4"/>
-<wire x1="137.795" y1="144.78" x2="144.145" y2="144.78" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
-<label x="144.145" y="144.78" size="1.27" layer="95" xref="yes" grouprefs="MICROCONTROLLER"/>
+<wire x1="132.715" y1="151.765" x2="139.065" y2="151.765" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<label x="139.065" y="151.765" size="1.27" layer="95" xref="yes" grouprefs="MICROCONTROLLER"/>
 </segment>
 <segment>
 <pinref part="U4" gate="A" pin="SDA"/>
 <pinref part="R22" gate="G$1" pin="1"/>
-<wire x1="236.22" y1="147.32" x2="210.82" y2="147.32" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
-<wire x1="210.82" y1="147.32" x2="210.82" y2="149.225" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
-<wire x1="210.82" y1="147.32" x2="196.85" y2="147.32" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
-<junction x="210.82" y="147.32" grouprefs="LCD_DISPLAY"/>
-<label x="196.85" y="147.32" size="1.27" layer="95" rot="R180" xref="yes" grouprefs="LCD_DISPLAY"/>
+<wire x1="239.395" y1="146.685" x2="213.995" y2="146.685" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="213.995" y1="146.685" x2="213.995" y2="148.59" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="213.995" y1="146.685" x2="200.025" y2="146.685" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<junction x="213.995" y="146.685" grouprefs="LCD_DISPLAY"/>
+<label x="200.025" y="146.685" size="1.27" layer="95" rot="R180" xref="yes" grouprefs="LCD_DISPLAY"/>
 </segment>
 </net>
 <net name="LCD_I2C_SCL" class="0">
 <segment>
 <pinref part="U6" gate="G$1" pin="PC5"/>
-<wire x1="137.795" y1="142.24" x2="144.145" y2="142.24" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
-<label x="144.145" y="142.24" size="1.27" layer="95" xref="yes" grouprefs="MICROCONTROLLER"/>
+<wire x1="132.715" y1="149.225" x2="139.065" y2="149.225" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<label x="139.065" y="149.225" size="1.27" layer="95" xref="yes" grouprefs="MICROCONTROLLER"/>
 </segment>
 <segment>
 <pinref part="U4" gate="A" pin="SCL"/>
 <pinref part="R21" gate="G$1" pin="1"/>
-<wire x1="236.22" y1="144.78" x2="219.71" y2="144.78" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
-<wire x1="219.71" y1="144.78" x2="219.71" y2="149.225" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
-<wire x1="219.71" y1="144.78" x2="196.85" y2="144.78" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
-<junction x="219.71" y="144.78" grouprefs="LCD_DISPLAY"/>
-<label x="196.85" y="144.78" size="1.27" layer="95" rot="R180" xref="yes" grouprefs="LCD_DISPLAY"/>
+<wire x1="239.395" y1="144.145" x2="222.885" y2="144.145" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="222.885" y1="144.145" x2="222.885" y2="148.59" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="222.885" y1="144.145" x2="200.025" y2="144.145" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<junction x="222.885" y="144.145" grouprefs="LCD_DISPLAY"/>
+<label x="200.025" y="144.145" size="1.27" layer="95" rot="R180" xref="yes" grouprefs="LCD_DISPLAY"/>
 </segment>
 </net>
 <net name="KEYPAD_ROW_1" class="0">
 <segment>
 <pinref part="U6" gate="G$1" pin="PD0"/>
-<wire x1="137.795" y1="137.16" x2="142.875" y2="137.16" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
-<label x="142.875" y="137.16" size="1.27" layer="95" xref="yes" grouprefs="MICROCONTROLLER"/>
+<wire x1="132.715" y1="144.145" x2="137.795" y2="144.145" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<label x="137.795" y="144.145" size="1.27" layer="95" xref="yes" grouprefs="MICROCONTROLLER"/>
 </segment>
 <segment>
 <pinref part="KP1" gate="G$1" pin="R1"/>
@@ -8069,9 +8069,9 @@ Source: &lt;a href="https://www.murata.com/products/productdata/8801076772894/SP
 </net>
 <net name="KEYPAD_ROW_2" class="0">
 <segment>
-<label x="142.875" y="119.38" size="1.27" layer="95" xref="yes" grouprefs="MICROCONTROLLER"/>
+<label x="137.795" y="126.365" size="1.27" layer="95" xref="yes" grouprefs="MICROCONTROLLER"/>
 <pinref part="U6" gate="G$1" pin="PD7"/>
-<wire x1="137.795" y1="119.38" x2="142.875" y2="119.38" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<wire x1="132.715" y1="126.365" x2="137.795" y2="126.365" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
 </segment>
 <segment>
 <pinref part="KP1" gate="G$1" pin="R2"/>
@@ -8082,8 +8082,8 @@ Source: &lt;a href="https://www.murata.com/products/productdata/8801076772894/SP
 <net name="KEYPAD_ROW_3" class="0">
 <segment>
 <pinref part="U6" gate="G$1" pin="PD2"/>
-<wire x1="137.795" y1="132.08" x2="142.875" y2="132.08" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
-<label x="142.875" y="132.08" size="1.27" layer="95" xref="yes" grouprefs="MICROCONTROLLER"/>
+<wire x1="132.715" y1="139.065" x2="137.795" y2="139.065" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<label x="137.795" y="139.065" size="1.27" layer="95" xref="yes" grouprefs="MICROCONTROLLER"/>
 </segment>
 <segment>
 <pinref part="KP1" gate="G$1" pin="R3"/>
@@ -8093,9 +8093,9 @@ Source: &lt;a href="https://www.murata.com/products/productdata/8801076772894/SP
 </net>
 <net name="KEYPAD_ROW_4" class="0">
 <segment>
-<label x="142.875" y="129.54" size="1.27" layer="95" xref="yes" grouprefs="MICROCONTROLLER"/>
+<label x="137.795" y="136.525" size="1.27" layer="95" xref="yes" grouprefs="MICROCONTROLLER"/>
 <pinref part="U6" gate="G$1" pin="PD3"/>
-<wire x1="137.795" y1="129.54" x2="142.875" y2="129.54" width="0.1524" layer="91"/>
+<wire x1="132.715" y1="136.525" x2="137.795" y2="136.525" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
 </segment>
 <segment>
 <pinref part="KP1" gate="G$1" pin="R4"/>
@@ -8106,8 +8106,8 @@ Source: &lt;a href="https://www.murata.com/products/productdata/8801076772894/SP
 <net name="KEYPAD_COL_1" class="0">
 <segment>
 <pinref part="U6" gate="G$1" pin="PD4"/>
-<wire x1="137.795" y1="127" x2="142.875" y2="127" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
-<label x="142.875" y="127" size="1.27" layer="95" xref="yes" grouprefs="MICROCONTROLLER"/>
+<wire x1="132.715" y1="133.985" x2="137.795" y2="133.985" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<label x="137.795" y="133.985" size="1.27" layer="95" xref="yes" grouprefs="MICROCONTROLLER"/>
 </segment>
 <segment>
 <pinref part="KP1" gate="G$1" pin="C1"/>
@@ -8118,8 +8118,8 @@ Source: &lt;a href="https://www.murata.com/products/productdata/8801076772894/SP
 <net name="KEYPAD_COL_2" class="0">
 <segment>
 <pinref part="U6" gate="G$1" pin="PD5"/>
-<wire x1="137.795" y1="124.46" x2="142.875" y2="124.46" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
-<label x="142.875" y="124.46" size="1.27" layer="95" xref="yes" grouprefs="MICROCONTROLLER"/>
+<wire x1="132.715" y1="131.445" x2="137.795" y2="131.445" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<label x="137.795" y="131.445" size="1.27" layer="95" xref="yes" grouprefs="MICROCONTROLLER"/>
 </segment>
 <segment>
 <pinref part="KP1" gate="G$1" pin="C2"/>
@@ -8131,8 +8131,8 @@ Source: &lt;a href="https://www.murata.com/products/productdata/8801076772894/SP
 <net name="KEYPAD_COL_3" class="0">
 <segment>
 <pinref part="U6" gate="G$1" pin="PD6"/>
-<wire x1="137.795" y1="121.92" x2="142.875" y2="121.92" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
-<label x="142.875" y="121.92" size="1.27" layer="95" xref="yes" grouprefs="MICROCONTROLLER"/>
+<wire x1="132.715" y1="128.905" x2="137.795" y2="128.905" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<label x="137.795" y="128.905" size="1.27" layer="95" xref="yes" grouprefs="MICROCONTROLLER"/>
 </segment>
 <segment>
 <pinref part="KP1" gate="G$1" pin="C3"/>
@@ -8145,109 +8145,95 @@ Source: &lt;a href="https://www.murata.com/products/productdata/8801076772894/SP
 <segment>
 <pinref part="DS1" gate="1" pin="DB4"/>
 <pinref part="U4" gate="A" pin="P4"/>
-<wire x1="274.32" y1="175.26" x2="274.32" y2="198.12" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="277.495" y1="174.625" x2="277.495" y2="197.485" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
 </segment>
 </net>
 <net name="N$7" class="0">
 <segment>
 <pinref part="DS1" gate="1" pin="DB5"/>
 <pinref part="U4" gate="A" pin="P5"/>
-<wire x1="276.86" y1="175.26" x2="276.86" y2="198.12" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="280.035" y1="174.625" x2="280.035" y2="197.485" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
 </segment>
 </net>
 <net name="N$8" class="0">
 <segment>
 <pinref part="DS1" gate="1" pin="DB6"/>
 <pinref part="U4" gate="A" pin="P6"/>
-<wire x1="279.4" y1="175.26" x2="279.4" y2="198.12" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="282.575" y1="174.625" x2="282.575" y2="197.485" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
 </segment>
 </net>
 <net name="N$17" class="0">
 <segment>
 <pinref part="DS1" gate="1" pin="DB7"/>
 <pinref part="U4" gate="A" pin="P7"/>
-<wire x1="281.94" y1="175.26" x2="281.94" y2="198.12" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="285.115" y1="174.625" x2="285.115" y2="197.485" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
 </segment>
 </net>
 <net name="N$18" class="0">
 <segment>
 <pinref part="DS1" gate="1" pin="E"/>
 <pinref part="U4" gate="A" pin="P2"/>
-<wire x1="259.08" y1="175.26" x2="259.08" y2="198.12" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="262.255" y1="174.625" x2="262.255" y2="197.485" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
 </segment>
 </net>
 <net name="N$19" class="0">
 <segment>
 <pinref part="DS1" gate="1" pin="R/W"/>
 <pinref part="U4" gate="A" pin="P1"/>
-<wire x1="256.54" y1="175.26" x2="256.54" y2="198.12" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="259.715" y1="174.625" x2="259.715" y2="197.485" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
 </segment>
 </net>
 <net name="N$20" class="0">
 <segment>
 <pinref part="DS1" gate="1" pin="RS"/>
 <pinref part="U4" gate="A" pin="P0"/>
-<wire x1="254" y1="175.26" x2="254" y2="198.12" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
-</segment>
-</net>
-<net name="LCD_LED_BACKLIGHT" class="0">
-<segment>
-<pinref part="U4" gate="A" pin="P3"/>
-<pinref part="R1" gate="G$1" pin="1"/>
-<wire x1="289.56" y1="144.78" x2="339.09" y2="144.78" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
-<wire x1="339.09" y1="144.78" x2="339.09" y2="156.845" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
-<label x="315.9125" y="145.0975" size="1.27" layer="95" grouprefs="LCD_DISPLAY"/>
-</segment>
-<segment>
-<pinref part="R18" gate="G$1" pin="1"/>
-<wire x1="306.07" y1="191.77" x2="311.15" y2="191.77" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
-<label x="294.64" y="187.325" size="1.27" layer="95" grouprefs="LCD_DISPLAY"/>
+<wire x1="257.175" y1="174.625" x2="257.175" y2="197.485" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
 </segment>
 </net>
 <net name="N$32" class="0">
 <segment>
 <pinref part="R18" gate="G$1" pin="2"/>
 <pinref part="Q1" gate="G$1" pin="B"/>
-<wire x1="294.64" y1="191.77" x2="295.91" y2="191.77" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="297.815" y1="191.135" x2="299.085" y2="191.135" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
 </segment>
 </net>
 <net name="N$33" class="0">
 <segment>
 <pinref part="DS1" gate="1" pin="K"/>
 <pinref part="Q1" gate="G$1" pin="C"/>
-<wire x1="289.56" y1="198.12" x2="289.56" y2="196.85" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="292.735" y1="197.485" x2="292.735" y2="196.215" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
 </segment>
 </net>
 <net name="N$35" class="0">
 <segment>
 <pinref part="U4" gate="A" pin="!INT"/>
 <pinref part="R20" gate="G$1" pin="1"/>
-<wire x1="289.56" y1="154.94" x2="299.085" y2="154.94" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
-<wire x1="299.085" y1="154.94" x2="299.085" y2="156.845" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="292.735" y1="154.305" x2="302.26" y2="154.305" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="302.26" y1="154.305" x2="302.26" y2="156.21" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
 </segment>
 </net>
 <net name="N$4" class="0">
 <segment>
 <pinref part="R25" gate="G$1" pin="1"/>
 <pinref part="U4" gate="A" pin="A0"/>
-<wire x1="308.61" y1="156.845" x2="308.61" y2="152.4" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
-<wire x1="308.61" y1="152.4" x2="289.56" y2="152.4" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="311.785" y1="156.21" x2="311.785" y2="151.765" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="311.785" y1="151.765" x2="292.735" y2="151.765" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
 </segment>
 </net>
 <net name="N$38" class="0">
 <segment>
 <pinref part="R24" gate="G$1" pin="1"/>
 <pinref part="U4" gate="A" pin="A1"/>
-<wire x1="318.135" y1="156.845" x2="318.135" y2="149.86" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
-<wire x1="318.135" y1="149.86" x2="289.56" y2="149.86" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="321.31" y1="156.21" x2="321.31" y2="149.225" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="321.31" y1="149.225" x2="292.735" y2="149.225" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
 </segment>
 </net>
 <net name="N$39" class="0">
 <segment>
 <pinref part="R23" gate="G$1" pin="1"/>
 <pinref part="U4" gate="A" pin="A2"/>
-<wire x1="328.295" y1="156.845" x2="328.295" y2="147.32" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
-<wire x1="328.295" y1="147.32" x2="289.56" y2="147.32" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="331.47" y1="156.21" x2="331.47" y2="146.685" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="331.47" y1="146.685" x2="292.735" y2="146.685" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -8267,8 +8253,8 @@ Source: &lt;a href="https://www.murata.com/products/productdata/8801076772894/SP
 <net name="GPIO_LED" class="0">
 <segment>
 <pinref part="U6" gate="G$1" pin="PB0"/>
-<wire x1="137.795" y1="163.83" x2="142.24" y2="163.83" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
-<label x="142.24" y="163.83" size="1.27" layer="95" xref="yes" grouprefs="MICROCONTROLLER"/>
+<wire x1="132.715" y1="170.815" x2="137.16" y2="170.815" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<label x="137.16" y="170.815" size="1.27" layer="95" xref="yes" grouprefs="MICROCONTROLLER"/>
 </segment>
 <segment>
 <pinref part="R3" gate="G$1" pin="1"/>
@@ -8282,9 +8268,9 @@ Source: &lt;a href="https://www.murata.com/products/productdata/8801076772894/SP
 </net>
 <net name="GPIO_BUZZER_AC+" class="0">
 <segment>
-<label x="142.24" y="161.29" size="1.27" layer="95" xref="yes" grouprefs="MICROCONTROLLER"/>
+<label x="137.16" y="168.275" size="1.27" layer="95" xref="yes" grouprefs="MICROCONTROLLER"/>
 <pinref part="U6" gate="G$1" pin="PB1"/>
-<wire x1="137.795" y1="161.29" x2="142.24" y2="161.29" width="0.1524" layer="91"/>
+<wire x1="132.715" y1="168.275" x2="137.16" y2="168.275" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
 </segment>
 <segment>
 <pinref part="R4" gate="G$1" pin="1"/>
@@ -8300,8 +8286,8 @@ Source: &lt;a href="https://www.murata.com/products/productdata/8801076772894/SP
 </segment>
 <segment>
 <pinref part="U6" gate="G$1" pin="PC0"/>
-<wire x1="137.795" y1="154.94" x2="142.24" y2="154.94" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
-<label x="142.24" y="154.94" size="1.27" layer="95" xref="yes" grouprefs="MICROCONTROLLER"/>
+<wire x1="132.715" y1="161.925" x2="137.16" y2="161.925" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<label x="137.16" y="161.925" size="1.27" layer="95" xref="yes" grouprefs="MICROCONTROLLER"/>
 </segment>
 </net>
 <net name="ADC_C4_EXPLOSIVE_2" class="0">
@@ -8312,8 +8298,8 @@ Source: &lt;a href="https://www.murata.com/products/productdata/8801076772894/SP
 </segment>
 <segment>
 <pinref part="U6" gate="G$1" pin="PC1"/>
-<wire x1="137.795" y1="152.4" x2="142.24" y2="152.4" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
-<label x="142.24" y="152.4" size="1.27" layer="95" xref="yes" grouprefs="MICROCONTROLLER"/>
+<wire x1="132.715" y1="159.385" x2="137.16" y2="159.385" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<label x="137.16" y="159.385" size="1.27" layer="95" xref="yes" grouprefs="MICROCONTROLLER"/>
 </segment>
 </net>
 <net name="ADC_C4_EXPLOSIVE_3" class="0">
@@ -8324,8 +8310,8 @@ Source: &lt;a href="https://www.murata.com/products/productdata/8801076772894/SP
 </segment>
 <segment>
 <pinref part="U6" gate="G$1" pin="PC2"/>
-<wire x1="137.795" y1="149.86" x2="142.24" y2="149.86" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
-<label x="142.24" y="149.86" size="1.27" layer="95" xref="yes" grouprefs="MICROCONTROLLER"/>
+<wire x1="132.715" y1="156.845" x2="137.16" y2="156.845" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<label x="137.16" y="156.845" size="1.27" layer="95" xref="yes" grouprefs="MICROCONTROLLER"/>
 </segment>
 </net>
 <net name="N$11" class="0">
@@ -8352,88 +8338,83 @@ Source: &lt;a href="https://www.murata.com/products/productdata/8801076772894/SP
 <net name="5.0V" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="OUT"/>
-<wire x1="114.3" y1="221.615" x2="121.92" y2="221.615" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
+<wire x1="120.65" y1="223.52" x2="128.27" y2="223.52" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
 <pinref part="C2" gate="G$1" pin="+"/>
-<wire x1="121.92" y1="215.265" x2="121.92" y2="221.615" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
-<junction x="121.92" y="221.615" grouprefs="POWER_SUPPLY"/>
+<wire x1="128.27" y1="217.17" x2="128.27" y2="223.52" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
+<junction x="128.27" y="223.52" grouprefs="POWER_SUPPLY"/>
 <pinref part="SUPPLY14" gate="G$1" pin="5.0V"/>
-<wire x1="121.92" y1="226.06" x2="121.92" y2="221.615" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
+<wire x1="128.27" y1="227.965" x2="128.27" y2="223.52" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
 </segment>
 <segment>
 <pinref part="DS1" gate="1" pin="VDD"/>
-<wire x1="237.49" y1="218.44" x2="232.41" y2="218.44" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
-<wire x1="232.41" y1="218.44" x2="232.41" y2="226.06" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
-<wire x1="232.41" y1="215.9" x2="232.41" y2="218.44" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
-<junction x="232.41" y="218.44" grouprefs="LCD_DISPLAY"/>
+<wire x1="240.665" y1="217.805" x2="235.585" y2="217.805" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="235.585" y1="217.805" x2="235.585" y2="225.425" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="235.585" y1="215.265" x2="235.585" y2="217.805" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<junction x="235.585" y="217.805" grouprefs="LCD_DISPLAY"/>
 <pinref part="RV1" gate="G$1" pin="3"/>
 <pinref part="SUPPLY2" gate="G$1" pin="5.0V"/>
 </segment>
 <segment>
 <pinref part="DS1" gate="1" pin="A"/>
-<wire x1="289.56" y1="226.06" x2="289.56" y2="223.52" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="292.735" y1="225.425" x2="292.735" y2="222.885" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
 <pinref part="SUPPLY3" gate="G$1" pin="5.0V"/>
 </segment>
 <segment>
 <pinref part="R22" gate="G$1" pin="2"/>
-<wire x1="210.82" y1="170.18" x2="210.82" y2="159.385" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="213.995" y1="169.545" x2="213.995" y2="158.75" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
 <pinref part="SUPPLY4" gate="G$1" pin="5.0V"/>
 </segment>
 <segment>
 <pinref part="R21" gate="G$1" pin="2"/>
-<wire x1="219.71" y1="170.18" x2="219.71" y2="159.385" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="222.885" y1="169.545" x2="222.885" y2="158.75" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
 <pinref part="SUPPLY6" gate="G$1" pin="5.0V"/>
 </segment>
 <segment>
 <pinref part="C1" gate="G$1" pin="1"/>
 <pinref part="U4" gate="A" pin="VCC"/>
-<wire x1="229.235" y1="165.1" x2="229.235" y2="167.64" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
-<wire x1="229.235" y1="167.64" x2="236.22" y2="167.64" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
-<wire x1="229.235" y1="170.18" x2="229.235" y2="167.64" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
-<junction x="229.235" y="167.64" grouprefs="LCD_DISPLAY"/>
+<wire x1="232.41" y1="164.465" x2="232.41" y2="167.005" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="232.41" y1="167.005" x2="239.395" y2="167.005" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="232.41" y1="169.545" x2="232.41" y2="167.005" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<junction x="232.41" y="167.005" grouprefs="LCD_DISPLAY"/>
 <pinref part="SUPPLY8" gate="G$1" pin="5.0V"/>
 </segment>
 <segment>
 <pinref part="R20" gate="G$1" pin="2"/>
-<wire x1="299.085" y1="170.18" x2="299.085" y2="167.005" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="302.26" y1="169.545" x2="302.26" y2="166.37" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
 <pinref part="SUPPLY13" gate="G$1" pin="5.0V"/>
 </segment>
 <segment>
 <pinref part="R25" gate="G$1" pin="2"/>
-<wire x1="308.61" y1="170.18" x2="308.61" y2="167.005" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="311.785" y1="169.545" x2="311.785" y2="166.37" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
 <pinref part="SUPPLY15" gate="G$1" pin="5.0V"/>
 </segment>
 <segment>
 <pinref part="R24" gate="G$1" pin="2"/>
-<wire x1="318.135" y1="170.18" x2="318.135" y2="167.005" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="321.31" y1="169.545" x2="321.31" y2="166.37" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
 <pinref part="SUPPLY17" gate="G$1" pin="5.0V"/>
 </segment>
 <segment>
 <pinref part="R23" gate="G$1" pin="2"/>
-<wire x1="328.295" y1="170.18" x2="328.295" y2="167.005" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
+<wire x1="331.47" y1="169.545" x2="331.47" y2="166.37" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
 <pinref part="SUPPLY19" gate="G$1" pin="5.0V"/>
 </segment>
 <segment>
-<pinref part="R1" gate="G$1" pin="2"/>
-<wire x1="339.09" y1="170.18" x2="339.09" y2="167.005" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
-<pinref part="SUPPLY20" gate="G$1" pin="5.0V"/>
-</segment>
-<segment>
 <pinref part="U6" gate="G$1" pin="VCC"/>
-<wire x1="102.235" y1="163.83" x2="81.915" y2="163.83" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
-<wire x1="81.915" y1="163.83" x2="81.915" y2="166.37" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<wire x1="97.155" y1="170.815" x2="76.835" y2="170.815" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<wire x1="76.835" y1="170.815" x2="76.835" y2="173.355" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
 <pinref part="U6" gate="G$1" pin="AVCC"/>
-<wire x1="102.235" y1="161.29" x2="81.915" y2="161.29" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
-<wire x1="81.915" y1="161.29" x2="81.915" y2="163.83" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
-<junction x="81.915" y="163.83" grouprefs="MICROCONTROLLER"/>
-<junction x="81.915" y="161.29" grouprefs="MICROCONTROLLER"/>
+<wire x1="97.155" y1="168.275" x2="76.835" y2="168.275" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<wire x1="76.835" y1="168.275" x2="76.835" y2="170.815" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<junction x="76.835" y="170.815" grouprefs="MICROCONTROLLER"/>
+<junction x="76.835" y="168.275" grouprefs="MICROCONTROLLER"/>
 <pinref part="C14" gate="G$1" pin="1"/>
-<wire x1="81.915" y1="156.845" x2="81.915" y2="161.29" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<wire x1="76.835" y1="163.83" x2="76.835" y2="168.275" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
 <pinref part="SUPPLY22" gate="G$1" pin="5.0V"/>
 </segment>
 <segment>
 <pinref part="CN2" gate="A" pin="2"/>
-<wire x1="69.215" y1="119.38" x2="61.595" y2="119.38" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
-<wire x1="61.595" y1="119.38" x2="61.595" y2="123.19" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<wire x1="64.135" y1="126.365" x2="56.515" y2="126.365" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<wire x1="56.515" y1="126.365" x2="56.515" y2="130.175" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
 <pinref part="SUPPLY23" gate="G$1" pin="5.0V"/>
 </segment>
 <segment>
@@ -8459,23 +8440,23 @@ Source: &lt;a href="https://www.murata.com/products/productdata/8801076772894/SP
 <net name="P$1" class="0">
 <segment>
 <pinref part="CN1" gate="G$1" pin="+"/>
-<wire x1="64.135" y1="221.615" x2="64.135" y2="213.995" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
+<wire x1="70.485" y1="223.52" x2="70.485" y2="215.9" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
 <pinref part="SUPPLY26" gate="G$1" pin="P$1"/>
-<wire x1="64.135" y1="226.06" x2="64.135" y2="221.615" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
-<junction x="64.135" y="221.615" grouprefs="POWER_SUPPLY"/>
-<wire x1="69.215" y1="221.615" x2="64.135" y2="221.615" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
+<wire x1="70.485" y1="227.965" x2="70.485" y2="223.52" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
+<junction x="70.485" y="223.52" grouprefs="POWER_SUPPLY"/>
+<wire x1="75.565" y1="223.52" x2="70.485" y2="223.52" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
 <pinref part="SW1" gate="G$1" pin="SW1"/>
 </segment>
 </net>
 <net name="N$10" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="IN"/>
-<wire x1="88.9" y1="221.615" x2="85.09" y2="221.615" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
+<wire x1="95.25" y1="223.52" x2="91.44" y2="223.52" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
 <pinref part="SW1" gate="G$1" pin="SW2"/>
 <pinref part="C3" gate="G$1" pin="+"/>
-<wire x1="85.09" y1="221.615" x2="81.915" y2="221.615" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
-<wire x1="85.09" y1="215.265" x2="85.09" y2="221.615" width="0.1524" layer="91"/>
-<junction x="85.09" y="221.615"/>
+<wire x1="91.44" y1="223.52" x2="88.265" y2="223.52" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
+<wire x1="91.44" y1="217.17" x2="91.44" y2="223.52" width="0.1524" layer="91"/>
+<junction x="91.44" y="223.52"/>
 </segment>
 </net>
 <net name="N$13" class="0">
@@ -8502,8 +8483,8 @@ Source: &lt;a href="https://www.murata.com/products/productdata/8801076772894/SP
 <net name="GPIO_BUZZER_AC-" class="0">
 <segment>
 <pinref part="U6" gate="G$1" pin="PB2"/>
-<wire x1="137.795" y1="158.75" x2="142.24" y2="158.75" width="0.1524" layer="91"/>
-<label x="142.24" y="158.75" size="1.27" layer="95" xref="yes"/>
+<wire x1="132.715" y1="165.735" x2="137.16" y2="165.735" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<label x="137.16" y="165.735" size="1.27" layer="95" xref="yes" grouprefs="MICROCONTROLLER"/>
 </segment>
 <segment>
 <pinref part="LS1" gate="G$1" pin="-"/>
@@ -8515,23 +8496,36 @@ Source: &lt;a href="https://www.murata.com/products/productdata/8801076772894/SP
 <net name="N$12" class="0">
 <segment>
 <pinref part="U6" gate="G$1" pin="PB6"/>
-<wire x1="102.235" y1="139.7" x2="97.155" y2="139.7" width="0.1524" layer="91"/>
+<wire x1="97.155" y1="146.685" x2="92.075" y2="146.685" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
 <pinref part="Y1" gate="U1" pin="1"/>
-<wire x1="97.155" y1="137.16" x2="97.155" y2="139.7" width="0.1524" layer="91"/>
+<wire x1="92.075" y1="144.145" x2="92.075" y2="146.685" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
 <pinref part="C4" gate="G$1" pin="1"/>
-<wire x1="92.075" y1="139.7" x2="97.155" y2="139.7" width="0.1524" layer="91"/>
-<junction x="97.155" y="139.7"/>
+<wire x1="86.995" y1="146.685" x2="92.075" y2="146.685" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<junction x="92.075" y="146.685" grouprefs="MICROCONTROLLER"/>
 </segment>
 </net>
 <net name="N$6" class="0">
 <segment>
 <pinref part="Y1" gate="U1" pin="2"/>
 <pinref part="U6" gate="G$1" pin="PB7"/>
-<wire x1="97.155" y1="132.08" x2="97.155" y2="129.54" width="0.1524" layer="91"/>
+<wire x1="92.075" y1="139.065" x2="92.075" y2="136.525" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
 <pinref part="C5" gate="G$1" pin="1"/>
-<wire x1="97.155" y1="129.54" x2="102.235" y2="129.54" width="0.1524" layer="91"/>
-<wire x1="91.44" y1="129.54" x2="97.155" y2="129.54" width="0.1524" layer="91"/>
-<junction x="97.155" y="129.54"/>
+<wire x1="92.075" y1="136.525" x2="97.155" y2="136.525" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<wire x1="86.36" y1="136.525" x2="92.075" y2="136.525" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<junction x="92.075" y="136.525" grouprefs="MICROCONTROLLER"/>
+</segment>
+</net>
+<net name="LCD_BACKLIGHT_BRIGHTNESS" class="0">
+<segment>
+<pinref part="R6" gate="G$1" pin="1"/>
+<wire x1="88.265" y1="105.41" x2="88.265" y2="103.505" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<wire x1="88.265" y1="103.505" x2="92.075" y2="103.505" width="0.1524" layer="91" grouprefs="MICROCONTROLLER"/>
+<label x="92.075" y="103.505" size="1.27" layer="95" xref="yes" grouprefs="MICROCONTROLLER"/>
+</segment>
+<segment>
+<label x="310.515" y="191.135" size="1.27" layer="95" xref="yes" grouprefs="LCD_DISPLAY"/>
+<pinref part="R18" gate="G$1" pin="1"/>
+<wire x1="309.245" y1="191.135" x2="310.515" y2="191.135" width="0.1524" layer="91" grouprefs="LCD_DISPLAY"/>
 </segment>
 </net>
 </nets>
