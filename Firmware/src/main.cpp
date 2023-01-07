@@ -134,13 +134,11 @@ void lcd_low_power(int16_t timeout_mins) {
 	if ((last_remaining - seconds_remaining) > (timeout_mins * 60)) {
 		analogWrite(LCD_BACKLIGHT_PWM_PIN, 10);
 		last_remaining = seconds_remaining;
-		Serial.println(1);
 	}
 
 	char key = KEYPAD.getKey();
 
 	if (key != NO_KEY) {
-		Serial.println(key);
 		key = NO_KEY;
 		analogWrite(LCD_BACKLIGHT_PWM_PIN, 255);
 		last_remaining = seconds_remaining;
@@ -264,8 +262,6 @@ void setup() {
 
 	pinMode(LCD_BACKLIGHT_PWM_PIN, OUTPUT);
 	analogWrite(LCD_BACKLIGHT_PWM_PIN, 255);
-
-	Serial.begin(115200);
 
 	LCD.init();
 	LCD.backlight();
