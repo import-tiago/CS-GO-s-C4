@@ -5,6 +5,7 @@
 
 uint8_t buzzer_volume = 10;
 #define LED_RED_PIN 8
+#define LCD_BACKLIGHT_PWM_PIN 11
 
 #define C4_SHELL1_PIN A0
 #define C4_SHELL2_PIN A1
@@ -127,11 +128,11 @@ void monitor_c4_shell_disconnection() {
 }
 
 void lcd_low_power(int16_t timeout_mins) {
-	int16_t seconds_remaining = (hours * 3600) + (minutes * 60);
+	int16_t seconds_remaining = (hours * 3600) + (minutes * 60) + seconds;
 	static int16_t last_remaining = seconds_remaining;
 
 	if ((last_remaining - seconds_remaining) > (timeout_mins * 60)) {
-		LCD.setBacklight(LOW);
+		analogWrite(LCD_BACKLIGHT_PWM_PIN, 10);
 		last_remaining = seconds_remaining;
 		Serial.println(1);
 	}
@@ -141,7 +142,7 @@ void lcd_low_power(int16_t timeout_mins) {
 	if (key != NO_KEY) {
 		Serial.println(key);
 		key = NO_KEY;
-		LCD.setBacklight(HIGH);
+		analogWrite(LCD_BACKLIGHT_PWM_PIN, 255);
 		last_remaining = seconds_remaining;
 	}
 }
@@ -260,6 +261,9 @@ void setup() {
 
 	pinMode(LED_RED_PIN, OUTPUT);
 	digitalWrite(LED_RED_PIN, LOW);
+
+	pinMode(LCD_BACKLIGHT_PWM_PIN, OUTPUT);
+	analogWrite(LCD_BACKLIGHT_PWM_PIN, 255);
 
 	Serial.begin(115200);
 
@@ -429,7 +433,7 @@ void setup() {
 					hours = (hour_ten * 10) + hour_one;
 					minutes = (min_ten * 10) + min_one;
 					seconds = (sec_ten * 10) + sec_one;
-					delay(800);
+					delay(200);
 					LCD.noBlink();
 					LCD.clear();
 
@@ -461,6 +465,8 @@ void setup() {
 }
 
 void loop() {
+
+	lcd_low_power(5); // LCD low power mode after 5 mins
 
 	monitor_c4_shell_disconnection();
 
