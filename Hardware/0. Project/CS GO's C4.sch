@@ -250,7 +250,7 @@
 </package3d>
 </packages3d>
 <symbols>
-<symbol name="ATMEGA328P-PU" urn="urn:adsk.eagle:symbol:38714069/1" locally_modified="yes" library_version="16" library_locally_modified="yes">
+<symbol name="ATMEGA328P-PU" urn="urn:adsk.eagle:symbol:38714069/2" library_version="17">
 <wire x1="-12.7" y1="30.48" x2="-12.7" y2="-26.67" width="0.254" layer="94"/>
 <wire x1="-12.7" y1="-26.67" x2="12.7" y2="-26.67" width="0.254" layer="94"/>
 <wire x1="12.7" y1="-26.67" x2="12.7" y2="30.48" width="0.254" layer="94"/>
@@ -287,7 +287,7 @@
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="ATMEGA328P-PU" urn="urn:adsk.eagle:component:38714042/2" prefix="U" library_version="16" library_locally_modified="yes">
+<deviceset name="ATMEGA328P-PU" urn="urn:adsk.eagle:component:38714042/3" prefix="U" library_version="17">
 <description>AVR AVR® ATmega Microcontroller IC 8-Bit 20MHz 32KB (16K x 16) FLASH 28-PDIP  &lt;a href="https://pricing.snapeda.com/parts/ATMEGA328-PU/Microchip%20Technology/view-part?ref=eda"&gt;Check availability&lt;/a&gt;</description>
 <gates>
 <gate name="G$1" symbol="ATMEGA328P-PU" x="0" y="0"/>
@@ -5274,11 +5274,32 @@ Keystone 6054-6059 Series</description>
 <text x="-6.0325" y="-1.27" size="1.778" layer="95" rot="R90" align="center">&gt;NAME</text>
 <text x="1.7145" y="-1.27" size="1.016" layer="96" rot="R90" align="center">&gt;FAMILY</text>
 </symbol>
+<symbol name="KEYPAD_PINOUT" library_version="20" library_locally_modified="yes">
+<circle x="-13.335" y="0" radius="1.27" width="0.1524" layer="97"/>
+<text x="-13.335" y="-2.54" size="1.778" layer="97" rot="R270" align="center-left">NC</text>
+<circle x="-9.525" y="0" radius="1.27" width="0.1524" layer="97"/>
+<text x="-9.525" y="-2.54" size="1.778" layer="97" rot="R270" align="center-left">COL2</text>
+<circle x="-5.715" y="0" radius="1.27" width="0.1524" layer="97"/>
+<text x="-5.715" y="-2.54" size="1.778" layer="97" rot="R270" align="center-left">ROW1</text>
+<circle x="-1.905" y="0" radius="1.27" width="0.1524" layer="97"/>
+<text x="-1.905" y="-2.54" size="1.778" layer="97" rot="R270" align="center-left">COL1</text>
+<circle x="1.905" y="0" radius="1.27" width="0.1524" layer="97"/>
+<text x="1.905" y="-2.54" size="1.778" layer="97" rot="R270" align="center-left">ROW4</text>
+<circle x="5.715" y="0" radius="1.27" width="0.1524" layer="97"/>
+<text x="5.715" y="-2.54" size="1.778" layer="97" rot="R270" align="center-left">COL3</text>
+<circle x="9.525" y="0" radius="1.27" width="0.1524" layer="97"/>
+<text x="9.525" y="-2.54" size="1.778" layer="97" rot="R270" align="center-left">ROW3</text>
+<circle x="13.335" y="0" radius="1.27" width="0.1524" layer="97"/>
+<text x="13.335" y="-2.54" size="1.778" layer="97" rot="R270" align="center-left">ROW2</text>
+<circle x="17.145" y="0" radius="1.27" width="0.1524" layer="97"/>
+<text x="17.145" y="-2.54" size="1.778" layer="97" rot="R270" align="center-left">NC</text>
+</symbol>
 </symbols>
 <devicesets>
-<deviceset name="KEYPAD" urn="urn:adsk.eagle:component:38558524/3" prefix="KP" library_version="20">
+<deviceset name="KEYPAD" urn="urn:adsk.eagle:component:38558524/3" locally_modified="yes" prefix="KP" library_version="20" library_locally_modified="yes">
 <gates>
 <gate name="G$1" symbol="KEYPAD" x="-10.16" y="2.54"/>
+<gate name="G$2" symbol="KEYPAD_PINOUT" x="-10.16" y="-35.56"/>
 </gates>
 <devices>
 <device name="" package="KEYPAD">
@@ -7449,7 +7470,7 @@ Source: &lt;a href="https://www.murata.com/products/productdata/8801076772894/SP
 <attributes>
 <attribute name="AUTHOR" value="Tiago Silva"/>
 <attribute name="SOURCE" value="github.com/TiagoPaulaSilva/CS-GO-s-C4"/>
-<attribute name="VERSION" value="1.7"/>
+<attribute name="VERSION" value="1.8"/>
 </attributes>
 <variantdefs>
 </variantdefs>
@@ -7838,6 +7859,7 @@ Source: &lt;a href="https://www.murata.com/products/productdata/8801076772894/SP
 <attribute name="NAME" x="86.1314" y="110.49" size="1.27" layer="95" rot="R90" align="center"/>
 <attribute name="VALUE" x="90.17" y="110.49" size="1.27" layer="96" rot="R90" align="center"/>
 </instance>
+<instance part="KP1" gate="G$2" x="215.9" y="48.26" smashed="yes" grouprefs="KEYPAD"/>
 </instances>
 <busses>
 </busses>
