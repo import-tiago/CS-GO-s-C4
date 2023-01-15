@@ -14,6 +14,9 @@ uint8_t buzzer_volume = 10;
 #define C4_SHELL_DISCONNECTED_AD_VALUE_MAX 20
 #define SPEED_UP_START_TIME_SECS 30
 
+#define HIGH_BRIGHTNESS 0
+#define LOW_BRIGHTNESS 245
+
 int8_t hours = 0;
 int8_t minutes = 0;
 int8_t seconds = 0;
@@ -132,7 +135,7 @@ void lcd_low_power(int16_t timeout_mins) {
 	static int16_t last_remaining = seconds_remaining;
 
 	if ((last_remaining - seconds_remaining) > (timeout_mins * 60)) {
-		analogWrite(LCD_BACKLIGHT_PWM_PIN, 10);
+		analogWrite(LCD_BACKLIGHT_PWM_PIN, LOW_BRIGHTNESS);
 		last_remaining = seconds_remaining;
 	}
 
@@ -140,7 +143,7 @@ void lcd_low_power(int16_t timeout_mins) {
 
 	if (key != NO_KEY) {
 		key = NO_KEY;
-		analogWrite(LCD_BACKLIGHT_PWM_PIN, 255);
+		analogWrite(LCD_BACKLIGHT_PWM_PIN, HIGH_BRIGHTNESS);
 		last_remaining = seconds_remaining;
 	}
 }
@@ -253,6 +256,9 @@ void mute_buzzer() {
 
 void setup() {
 
+	LCD.init();
+	LCD.backlight();
+
 	pinMode(C4_SHELL1_PIN, INPUT);
 	pinMode(C4_SHELL2_PIN, INPUT);
 	pinMode(C4_SHELL3_PIN, INPUT);
@@ -261,10 +267,7 @@ void setup() {
 	digitalWrite(LED_RED_PIN, LOW);
 
 	pinMode(LCD_BACKLIGHT_PWM_PIN, OUTPUT);
-	analogWrite(LCD_BACKLIGHT_PWM_PIN, 255);
-
-	LCD.init();
-	LCD.backlight();
+	analogWrite(LCD_BACKLIGHT_PWM_PIN, HIGH_BRIGHTNESS);
 
 	alert_beeps();
 
