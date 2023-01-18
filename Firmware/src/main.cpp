@@ -134,7 +134,7 @@ void lcd_low_power(int16_t timeout_mins) {
 	int16_t seconds_remaining = (hours * 3600) + (minutes * 60) + seconds;
 	static int16_t last_remaining = seconds_remaining;
 
-	if ((last_remaining - seconds_remaining) > (timeout_mins * 60)) {
+	if ((last_remaining - seconds_remaining) > (timeout_mins * 60) && !c4_shell_disconnection_detected) {
 		analogWrite(LCD_BACKLIGHT_PWM_PIN, LOW_BRIGHTNESS);
 		last_remaining = seconds_remaining;
 	}
@@ -241,7 +241,7 @@ void mute_buzzer() {
 		t0 = millis();
 
 	else if (state == HOLD) {
-		
+
 		if ((millis() - t0) > 2000 && !beep) {
 
 			beep = true;
