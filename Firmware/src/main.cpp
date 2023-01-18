@@ -138,6 +138,7 @@ void monitor_c4_shell_disconnection() {
 
 	if (!shell1_disconnected && (analogRead(C4_SHELL1_PIN) < C4_SHELL_DISCONNECTED_AD_VALUE_MAX)) {
 		shell1_disconnected = true;
+		buzzer_volume = 10;
 		alert_beeps();
 		c4_shell_disconnection_detected++;
 		if (c4_shell_disconnection_detected == 1) {
@@ -152,6 +153,7 @@ void monitor_c4_shell_disconnection() {
 
 	if (!shell2_disconnected && (analogRead(C4_SHELL2_PIN) < C4_SHELL_DISCONNECTED_AD_VALUE_MAX)) {
 		shell2_disconnected = true;
+		buzzer_volume = 10;
 		alert_beeps();
 		c4_shell_disconnection_detected++;
 		if (c4_shell_disconnection_detected == 1) {
@@ -166,6 +168,7 @@ void monitor_c4_shell_disconnection() {
 
 	if (!shell3_disconnected && (analogRead(C4_SHELL3_PIN) < C4_SHELL_DISCONNECTED_AD_VALUE_MAX)) {
 		shell3_disconnected = true;
+		buzzer_volume = 10;
 		alert_beeps();
 		c4_shell_disconnection_detected++;
 		if (c4_shell_disconnection_detected == 1) {
@@ -323,7 +326,6 @@ void mute_buzzer() {
 	else if (state == RELEASED)
 		beep = false;
 }
-
 
 void setup() {
 
@@ -554,8 +556,6 @@ void loop() {
 			tick_beep();
 		}
 	}
-
-
 
 	display_print_current_countdown();
 
