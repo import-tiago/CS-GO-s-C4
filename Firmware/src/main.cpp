@@ -235,13 +235,16 @@ void mute_buzzer() {
 
 	static uint32_t t0;
 	KeyState state = KEYPAD.getState();
+	static bool beep = false;
 
 	if (state == PRESSED)
 		t0 = millis();
 
 	else if (state == HOLD) {
+		
+		if ((millis() - t0) > 2000 && !beep) {
 
-		if ((millis() - t0) > 2000) {
+			beep = true;
 
 			alert_beeps();
 
@@ -252,6 +255,9 @@ void mute_buzzer() {
 				buzzer_volume = 10;
 		}
 	}
+
+	else if (state == RELEASED)
+		beep = false;
 }
 
 void setup() {
