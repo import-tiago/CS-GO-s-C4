@@ -2,6 +2,7 @@
 #include <LiquidCrystal_I2C.h>
 #include <Keypad.h>
 #include <toneAC.h>
+#include <string.h>
 
 uint8_t buzzer_volume = 10;
 #define LED_RED_PIN 8
@@ -80,6 +81,40 @@ void terrorists_win() {
 	}
 }
 
+void counter_terrorists_win() {
+
+	seconds = 59;
+	minutes = 59;
+	hours = 99;
+
+	LCD.noBlink();
+	LCD.clear();
+	LCD.home();
+
+	alert_beeps();
+
+	LCD.setCursor(0, 0);
+	LCD.print(" BOMB HAS BEEN ");
+	LCD.setCursor(0, 1);
+	LCD.print("    DEFUSED    ");
+
+	delay(2000);
+
+	LCD.setCursor(0, 0);
+	LCD.print("    COUNTER    ");
+	LCD.setCursor(0, 1);
+	LCD.print("TERRORISTS WIN!!");
+
+	countdown_running = false;
+	countdown_finished = true;
+	buzzer_volume = 0;
+	digitalWrite(LED_RED_PIN, LOW);
+
+	while (1) {
+		;
+	}
+}
+
 void monitor_c4_shell_disconnection() {
 
 	static bool shell1_disconnected = false;
@@ -139,10 +174,24 @@ void lcd_low_power(int16_t timeout_mins) {
 		last_remaining = seconds_remaining;
 	}
 
+
+	static char input[100] = { 0 };
+	input[99] = '\0';
+	static uint8_t i = 0;
+
 	char key = KEYPAD.getKey();
 
 	if (key != NO_KEY) {
+
+		input[i] = key;
 		key = NO_KEY;
+
+		if (++i > 98)
+			i = 0;
+
+		if (strstr(input, "7355608"))
+			counter_terrorists_win();
+
 		analogWrite(LCD_BACKLIGHT_PWM_PIN, HIGH_BRIGHTNESS);
 		last_remaining = seconds_remaining;
 	}
@@ -259,6 +308,7 @@ void mute_buzzer() {
 	else if (state == RELEASED)
 		beep = false;
 }
+
 
 void setup() {
 
