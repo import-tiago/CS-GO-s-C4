@@ -66,13 +66,27 @@ void terrorists_win() {
 	LCD.noBlink();
 	LCD.clear();
 	LCD.home();
-	LCD.setCursor(0, 0);
-	LCD.print("TERRORISTS WIN!!");
+
+	uint8_t msg = 0;
+	uint32_t t0 = millis();
 
 	countdown_running = false;
 	countdown_finished = true;
 
 	while (1) {
+
+		if (msg == 0) {
+			LCD.setCursor(0, 0);
+			LCD.print(" BOOOOOOOOM !!!");
+			msg++;
+		}
+		else if ((msg == 1) && (millis() - t0) >= 1000) {
+			LCD.clear();
+			LCD.setCursor(0, 0);
+			LCD.print("TERRORISTS WIN!!");
+			msg++;
+		}
+
 		toneAC(7000, 10, 50, false);
 		static bool state = true;
 		state = !state;
@@ -166,6 +180,7 @@ void monitor_c4_shell_disconnection() {
 }
 
 void lcd_low_power(int16_t timeout_mins) {
+
 	int16_t seconds_remaining = (hours * 3600) + (minutes * 60) + seconds;
 	static int16_t last_remaining = seconds_remaining;
 
@@ -507,6 +522,12 @@ void setup() {
 					if (armkey == '#') {
 						alert_beeps();
 						LCD.clear();
+						LCD.setCursor(0, 0);
+						LCD.print(" BOMB HAS BEEN ");
+						LCD.setCursor(0, 1);
+						LCD.print("    PLANTED    ");
+						delay(1500);
+						LCD.clear();
 						step = 0;
 						c4_shell_disconnection_detected = false;
 						countdown_running = true;
@@ -534,11 +555,13 @@ void loop() {
 		}
 	}
 
-	mute_buzzer();
+
 
 	display_print_current_countdown();
 
 	countdown_speedrun_monitor();
 
 	countdown_calcs();
+
+	mute_buzzer();
 }
