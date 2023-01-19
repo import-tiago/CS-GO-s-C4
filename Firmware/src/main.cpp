@@ -41,8 +41,8 @@ byte rowPins[KEYPAD_ROWS] = { 0, 7, 2, 3 };
 byte colPins[KEYPAD_COLUMNS] = { 4, 5, 6 };
 
 Keypad KEYPAD = Keypad(makeKeymap(keys), rowPins, colPins, KEYPAD_ROWS, KEYPAD_COLUMNS);
-LiquidCrystal_I2C LCD(0x27, 16, 2);
 
+LiquidCrystal_I2C LCD(0x27, 16, 2);
 
 void reset_system() {
 	asm volatile ("jmp 0");
@@ -192,7 +192,6 @@ void lcd_low_power(int16_t timeout_mins) {
 		last_remaining = seconds_remaining;
 	}
 
-
 	static char input[100] = { 0 };
 	input[99] = '\0';
 	static uint8_t i = 0;
@@ -300,7 +299,7 @@ void countdown_calcs() {
 
 void mute_buzzer() {
 
-	static uint32_t t0;
+	static uint32_t t0 = millis();
 	KeyState state = KEYPAD.getState();
 	static bool beep = false;
 
@@ -544,8 +543,6 @@ void setup() {
 
 void loop() {
 
-	lcd_low_power(5); // LCD low power mode after 5 mins
-
 	monitor_c4_shell_disconnection();
 
 	if (!speedrun) {
@@ -562,6 +559,8 @@ void loop() {
 	countdown_speedrun_monitor();
 
 	countdown_calcs();
+
+	lcd_low_power(5); // LCD low power mode after 5 mins
 
 	mute_buzzer();
 }

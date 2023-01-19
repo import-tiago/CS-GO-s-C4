@@ -219,7 +219,7 @@ char Keypad::waitForKey() {
 
 // Backwards compatibility function.
 KeyState Keypad::getState() {
-	getKeys();
+	//getKeys();
 	return key[0].kstate;
 }
 

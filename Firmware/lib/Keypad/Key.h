@@ -43,13 +43,13 @@
 #define KEY_CLOSED HIGH
 
 typedef unsigned int uint;
-typedef enum{ IDLE, PRESSED, HOLD, RELEASED } KeyState;
+typedef enum { IDLE, PRESSED, HOLD, RELEASED } KeyState;
 
 const char NO_KEY = '\0';
-const int UNASSIGNED=-1;        // kcode is not assigned.
+const int UNASSIGNED = -1;        // kcode is not assigned.
 
 class Key {
-public:
+	public:
 	// members
 	char kchar;
 	int kcode;
@@ -61,7 +61,7 @@ public:
 	Key(char userKeyChar);
 	void key_update(char userKeyChar, KeyState userState, boolean userStatus);
 
-private:
+	private:
 
 };
 
