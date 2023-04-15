@@ -1,6 +1,10 @@
 # CS GO's C4
 This is a fun and decorative version of the C4 explosive found in Counter-Strike Global Offensive ("CS GO"). It just implements a countdown timer with sounds similar to the game's originals and nothing else.
 
+[@Lett received the C4 as a gift:](https://twitter.com/lett1337/status/1644423023087304705)
+
+<p align="center"><img src="https://github.com/TiagoPaulaSilva/CS-GO-s-C4/blob/main/Assets/lett.jpg" ></p>
+
 <p align="center"><img src="https://github.com/TiagoPaulaSilva/CS-GO-s-C4/blob/main/Assets/IMG_5074.png" ></p>
 
 # Reference
