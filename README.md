@@ -11,7 +11,7 @@ This is a fun and decorative version of the C4 explosive found in Counter-Strike
 <p align="center"><img src="https://github.com/import-tiago/CS-GO-s-C4/blob/main/Assets/C4_reference.png" ></p>
 
 ## Video
-<p align="center"><a href="https://vimeo.com/789508737"><img src="https://github.com/import-tiago/CS-GO-s-C4/blob/main/Assets/video_preview_gif.gif" width="80%" height="50%" title="Watch the video" alt="Watch the video"></a></p>
+<p align="center"><a href="https://www.youtube.com/watch?v=a4UV_Q8pRXs"><img src="https://github.com/import-tiago/CS-GO-s-C4/blob/main/Assets/video_preview_gif.gif" width="80%" height="50%" title="Watch the video" alt="Watch the video"></a></p>
 
 # C4 Sheel Label
 <p align="center"><img src="https://github.com/import-tiago/CS-GO-s-C4/blob/main/Assets/c4_sheel_label_preview.png" ></p>
